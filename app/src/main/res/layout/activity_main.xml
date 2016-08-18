@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tlqkf.homework.MainActivity"
+    android:background="@drawable/ds">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AA000000"
+    android:visibility="gone"
+    android:id="@+id/ask">
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="170dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="#FFFFFF">
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:text=" 종료할꼬얌?"
+            android:textStyle="bold"
+            android:textSize="50dp"
+            android:layout_marginTop="30dp"/>
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:id="@+id/no"
+            android:layout_alignTop="@+id/finish"
+            android:layout_alignParentEnd="true"
+            android:text="안할꼬얌"
+            android:onClick="onclick"/>
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="110dp"
+            android:layout_toLeftOf="@+id/no"
+            android:id="@+id/finish"
+            android:text="할꼬얌!!"
+            android:onClick="onclick"/>
+    </RelativeLayout>
+</RelativeLayout>
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:text="게임 시작~~!"
+        android:textStyle="italic"
+        android:textSize="25dp"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="240dp"
+        android:onClick="onclick"
+        android:background="#B56503"
+        android:visibility="visible"/>
+
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:text="도움말"
+        android:textStyle="italic"
+        android:textSize="25dp"
+        android:id="@+id/button2"
+        android:layout_alignTop="@+id/button"
+        android:layout_alignEnd="@+id/button"
+        android:layout_marginTop="103dp"
+        android:onClick="onclick"
+        android:background="#B56503"
+        android:visibility="visible"/>
+
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:text="게임 끝내기"
+        android:textStyle="italic"
+        android:textSize="25dp"
+        android:id="@+id/button3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/button2"
+        android:layout_marginBottom="40dp"
+        android:onClick="onclick"
+        android:background="#B56503"
+        android:visibility="visible"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="      재미있는 숫자 야구"
+        android:textStyle="italic"
+        android:textSize="30dp"
+        android:typeface="serif"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="53dp"
+        android:layout_alignEnd="@+id/button" />
+
+</RelativeLayout>
