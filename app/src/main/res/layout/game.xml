@@ -51,7 +51,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:onClick="onclick"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:background="#60000000"/>
 
     <Button
         android:layout_width="70dp"
@@ -61,7 +62,8 @@
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/button4"
         android:onClick="onclick"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:background="#60000000"/>
 
     <Button
         android:layout_marginLeft="10dp"
@@ -72,7 +74,8 @@
         android:layout_above="@+id/button4"
         android:layout_alignParentStart="true"
         android:onClick="onclick"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:background="#60000000"/>
 
     <Button
         android:layout_width="70dp"
@@ -82,7 +85,8 @@
         android:layout_alignTop="@+id/button6"
         android:layout_toEndOf="@+id/button4"
         android:onClick="onclick"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:background="#60000000"/>
 
     <Button
         android:layout_width="70dp"
@@ -92,7 +96,8 @@
         android:layout_alignTop="@+id/button7"
         android:layout_toEndOf="@+id/button5"
         android:onClick="onclick"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:background="#60000000"/>
 
     <Button
         android:layout_width="70dp"
@@ -102,7 +107,8 @@
         android:layout_below="@+id/button8"
         android:layout_alignStart="@+id/button8"
         android:onClick="onclick"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:background="#60000000"/>
 
     <Button
         android:layout_width="70dp"
@@ -112,7 +118,8 @@
         android:layout_alignTop="@+id/button8"
         android:layout_toEndOf="@+id/button8"
         android:onClick="onclick"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:background="#60000000"/>
 
     <Button
         android:layout_width="70dp"
@@ -122,9 +129,11 @@
         android:layout_below="@+id/button8"
         android:layout_toEndOf="@+id/button8"
         android:onClick="onclick"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:background="#60000000"/>
 
     <Button
+        android:layout_marginRight="10dp"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:text="9"
@@ -132,17 +141,30 @@
         android:layout_above="@+id/button11"
         android:layout_toEndOf="@+id/button10"
         android:onClick="onclick"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:background="#60000000" />
 
     <Button
         android:layout_width="70dp"
+        android:layout_marginRight="10dp"
         android:layout_height="wrap_content"
         android:text="menu"
         android:id="@+id/button13"
         android:layout_below="@+id/button12"
         android:layout_toEndOf="@+id/button11"
         android:onClick="onclick"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:background="#60000000"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:textColor="#FFFF37"
+        android:background="#66000000"
+        android:text="목숨이 9번 남았습니다."
+        android:textSize="30dp"
+        android:id="@+id/life"/>
 
     <TextView
         android:layout_width="30dp"
@@ -152,7 +174,7 @@
         android:background="#66000000"
         android:textSize="50dp"
         android:id="@+id/f_n1"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_marginLeft="70dp"
         android:visibility="visible"/>
 
@@ -164,7 +186,7 @@
         android:background="#66000000"
         android:textSize="50dp"
         android:id="@+id/f_n2"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:visibility="visible"
         android:layout_marginLeft="170dp" />
 
@@ -177,7 +199,26 @@
         android:background="#66000000"
         android:textSize="50dp"
         android:id="@+id/f_n3"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_marginLeft="270dp"
         android:visibility="visible"        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="확인"
+        android:id="@+id/button14"
+        android:layout_marginLeft="30dp"
+        android:layout_above="@+id/button6"
+        android:background="#60000000"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="지우기"
+        android:id="@+id/button15"
+        android:layout_marginRight="30dp"
+        android:background="#60000000"
+        android:layout_alignTop="@+id/button14"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

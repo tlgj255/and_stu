@@ -20,55 +20,65 @@ import java.util.Random;
 
 public class game extends AppCompatActivity {
 
-    int a = 0,e = 0,Random,Random2,Random3,b[] = new int[3],c = 0,d = 0,f = 0;
-    TextView n_f1,n_f2,n_f3;
-    Button n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8, n_9, menu, yes, no;
+    int a = 0, e = 0, Random, Random2, Random3, b[] = new int[3], c = 0, d = 0, f = 0, g = 9;
+    TextView n_f1, n_f2, n_f3, life;
+    Button n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8, n_9, menu, yes, no, ok, back;
     RelativeLayout ask;
 
     @Override
-    public void onBackPressed(){
-        if (a == 1){
+    public void onBackPressed() {
+        if (a == 1) {
+            ok.setVisibility(View.VISIBLE);
+            back.setVisibility(View.VISIBLE);
             ask.setVisibility(View.GONE);
+            life.setVisibility(View.VISIBLE);
             n_1.setVisibility(View.VISIBLE);
-                    n_2.setVisibility(View.VISIBLE);
+            n_2.setVisibility(View.VISIBLE);
             n_3.setVisibility(View.VISIBLE);
-                    n_4.setVisibility(View.VISIBLE);
+            n_4.setVisibility(View.VISIBLE);
             n_5.setVisibility(View.VISIBLE);
-                    n_6.setVisibility(View.VISIBLE);
+            n_6.setVisibility(View.VISIBLE);
             n_7.setVisibility(View.VISIBLE);
-                    n_8.setVisibility(View.VISIBLE);
+            n_8.setVisibility(View.VISIBLE);
             n_9.setVisibility(View.VISIBLE);
-                    menu.setVisibility(View.VISIBLE);
-            a = 0 ;
+            menu.setVisibility(View.VISIBLE);
+            a = 0;
             n_f1.setVisibility(View.VISIBLE);
-                    n_f2.setVisibility(View.VISIBLE);
+            n_f2.setVisibility(View.VISIBLE);
             n_f3.setVisibility(View.VISIBLE);
             yes.setClickable(false);
             no.setClickable(false);
-        }else{
+        } else {
+            ok.setVisibility(View.GONE);
+            back.setVisibility(View.GONE);
             ask.setVisibility(View.VISIBLE);
+            life.setVisibility(View.GONE);
             n_1.setVisibility(View.GONE);
             n_f1.setVisibility(View.GONE);
-                    n_f2.setVisibility(View.GONE);
+            n_f2.setVisibility(View.GONE);
             n_f3.setVisibility(View.GONE);
-                    n_2.setVisibility(View.GONE);
+            n_2.setVisibility(View.GONE);
             n_3.setVisibility(View.GONE);
-                    n_4.setVisibility(View.GONE);
+            n_4.setVisibility(View.GONE);
             n_5.setVisibility(View.GONE);
-                    n_6.setVisibility(View.GONE);
+            n_6.setVisibility(View.GONE);
             n_7.setVisibility(View.GONE);
-                    n_8.setVisibility(View.GONE);
+            n_8.setVisibility(View.GONE);
             n_9.setVisibility(View.GONE);
-                    menu.setVisibility(View.GONE);
+            menu.setVisibility(View.GONE);
             yes.setClickable(true);
             no.setClickable(true);
-            a = 1 ;}
+            a = 1;
+        }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
-
+        ok = (Button)findViewById(R.id.button14);
+        back = (Button)findViewById(R.id.button15);
+        life = (TextView) findViewById(R.id.life);
         n_f1 = (TextView) findViewById(R.id.f_n1);
         n_f2 = (TextView) findViewById(R.id.f_n2);
         n_f3 = (TextView) findViewById(R.id.f_n3);
@@ -86,22 +96,27 @@ public class game extends AppCompatActivity {
         yes = (Button) findViewById(R.id.finish);
         no = (Button) findViewById(R.id.no);
     }
+
     public void onclick(View v) {
-        Random = (int) (Math.random() * 10);
-        Random2 = (int) (Math.random() * 10);
-        Random3 = (int) (Math.random() * 10);
+        Random = (int) (Math.random() * 9) + 1;
+        Random2 = (int) (Math.random() * 9) + 1;
+        Random3 = (int) (Math.random() * 9) + 1;
         while (true) {
             if (Random == Random2 || Random == Random3 || Random2 == Random3) {
-                Random = (int) (Math.random() * 10);
-                Random2 = (int) (Math.random() * 10);
-                Random3 = (int) (Math.random() * 10);
+                Random = (int) (Math.random() * 9) + 1;
+                Random2 = (int) (Math.random() * 9) + 1;
+                Random3 = (int) (Math.random() * 9) + 1;
             } else {
                 break;
             }
         }
         Intent I = new Intent(this, MainActivity.class);
-        switch (v.getId()){
+        life.setText("목숨이" + g + "번 남았습니다.");
+        switch (v.getId()) {
             case R.id.button13:
+                ok.setVisibility(View.GONE);
+                back.setVisibility(View.GONE);
+                life.setVisibility(View.GONE);
                 ask.setVisibility(View.VISIBLE);
                 n_1.setVisibility(View.GONE);
                 n_2.setVisibility(View.GONE);
@@ -126,6 +141,9 @@ public class game extends AppCompatActivity {
                 this.finish();
                 break;
             case R.id.no:
+                ok.setVisibility(View.VISIBLE);
+                back.setVisibility(View.VISIBLE);
+                life.setVisibility(View.VISIBLE);
                 ask.setVisibility(View.GONE);
                 n_1.setVisibility(View.VISIBLE);
                 n_2.setVisibility(View.VISIBLE);
@@ -144,37 +162,42 @@ public class game extends AppCompatActivity {
                 yes.setClickable(false);
                 no.setClickable(false);
                 break;
-        }
-        for (c = 0; c < 3; c++) {
-            switch (v.getId()) {
-                case R.id.button6:
-                    b[c] = 1;
-                    break;
-                case R.id.button4:
-                    b[c] = 2;
-                    break;
-                case R.id.button7:
-                    b[c] = 3;
-                    break;
-                case R.id.button5:
-                    b[c] = 4;
-                    break;
-                case R.id.button8:
-                    b[c] = 5;
-                    break;
-                case R.id.button9:
-                    b[c] = 6;
-                    break;
-                case R.id.button10:
-                    b[c] = 7;
-                    break;
-                case R.id.button11:
-                    b[c] = 8;
-                    break;
-                case R.id.button12:
-                    b[c] = 9;
-                    break;
-            }
+            case R.id.button6:
+                b[c] = 1;
+                n_1.setClickable(false);
+                break;
+            case R.id.button4:
+                b[c] = 2;
+                n_2.setClickable(false);
+                break;
+            case R.id.button7:
+                n_3.setClickable(false);
+                b[c] = 3;
+                break;
+            case R.id.button5:
+                b[c] = 4;
+                n_4.setClickable(false);
+                break;
+            case R.id.button8:
+                b[c] = 5;
+                n_5.setClickable(false);
+                break;
+            case R.id.button9:
+                n_6.setClickable(false);
+                b[c] = 6;
+                break;
+            case R.id.button10:
+                b[c] = 7;
+                n_7.setClickable(false);
+                break;
+            case R.id.button11:
+                b[c] = 8;
+                n_8.setClickable(false);
+                break;
+            case R.id.button12:
+                b[c] = 9;
+                n_9.setClickable(false);
+                break;
         }
         e = b[0];
         n_f1.setText("" + e);
@@ -182,5 +205,6 @@ public class game extends AppCompatActivity {
         n_f2.setText("" + d);
         f = b[2];
         n_f3.setText("" + f);
+        c++;
     }
 }
