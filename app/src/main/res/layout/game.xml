@@ -18,7 +18,7 @@
             <TextView
                 android:layout_width="300dp"
                 android:layout_height="60dp"
-                android:text="  뭐할꼬얌?"
+                android:text="   일시정지"
                 android:textStyle="bold"
                 android:textSize="50dp"
                 android:layout_marginTop="30dp"/>
@@ -28,7 +28,7 @@
                 android:id="@+id/no"
                 android:layout_alignTop="@+id/finish"
                 android:layout_alignParentEnd="true"
-                android:text="계속할꼬얌"
+                android:text="다시진행"
                 android:onClick="onclick"/>
 
             <Button
@@ -37,11 +37,56 @@
                 android:layout_marginTop="110dp"
                 android:layout_toLeftOf="@+id/no"
                 android:id="@+id/finish"
-                android:text="메뉴갈꼬얌!!"
+                android:text="메뉴로"
                 android:onClick="onclick"/>
         </RelativeLayout>
     </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#AA000000"
+            android:visibility="gone"
+            android:id="@+id/clear">
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="170dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:background="#FFFFFF">
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="60dp"
+                    android:text="  게임클리어"
+                    android:textStyle="bold"
+                    android:textSize="45dp"
+                    />
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:text="9번만에 클리어!!"
+                    android:textSize="35dp"
+                    android:id="@+id/count"/>
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/out"
+                    android:layout_alignTop="@+id/regame"
+                    android:layout_alignParentEnd="true"
+                    android:text="나가기"
+                    android:onClick="onclick"/>
 
+                <Button
+                    android:layout_width="160dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="110dp"
+                    android:layout_toLeftOf="@+id/out"
+                    android:id="@+id/regame"
+                    android:text="다시도전!!"
+                    android:onClick="onclick"/>
+    </RelativeLayout>
+        </RelativeLayout>
     <Button
         android:layout_marginLeft="10dp"
         android:layout_width="70dp"
@@ -158,18 +203,18 @@
     <TextView
         android:layout_marginTop="10dp"
         android:layout_marginLeft="30dp"
-        android:layout_width="300dp"
+        android:layout_width="310dp"
         android:layout_height="40dp"
         android:textColor="#FFFF37"
         android:background="#66000000"
-        android:text="목숨이 9번 남았습니다."
+        android:text=" 목숨이 9번 남았습니다."
         android:textSize="30dp"
         android:id="@+id/life"/>
 
     <TextView
         android:layout_width="30dp"
         android:layout_height="57dp"
-        android:text=""
+        android:text="0"
         android:textColor="#FFFF37"
         android:background="#66000000"
         android:textSize="50dp"
@@ -181,7 +226,7 @@
     <TextView
         android:layout_width="30dp"
         android:layout_height="57dp"
-        android:text=""
+        android:text="0"
         android:textColor="#FFFF37"
         android:background="#66000000"
         android:textSize="50dp"
@@ -194,7 +239,7 @@
     <TextView
         android:layout_width="30dp"
         android:layout_height="57dp"
-        android:text=""
+        android:text="0"
         android:textColor="#FFFF37"
         android:background="#66000000"
         android:textSize="50dp"
@@ -210,7 +255,8 @@
         android:id="@+id/button14"
         android:layout_marginLeft="30dp"
         android:layout_above="@+id/button6"
-        android:background="#60000000"/>
+        android:background="#60000000"
+        android:onClick="onclick"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -220,5 +266,6 @@
         android:layout_marginRight="30dp"
         android:background="#60000000"
         android:layout_alignTop="@+id/button14"
+        android:onClick="onclick"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>
