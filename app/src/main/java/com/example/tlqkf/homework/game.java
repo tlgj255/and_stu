@@ -16,9 +16,10 @@ import java.util.Random;
 
 public class game extends AppCompatActivity {
     int a = 0, e = 0, Random, Random2, Random3, b[] = new int[3], c = 0, d = 0, f = 0, g = 9, s = 0, ball = 0, dw = 0;
-    TextView n_f1, n_f2, n_f3, life,count;
+    TextView n_f1, n_f2, n_f3, life, count, n_f4_, n_f2_;
     Button n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8, n_9, menu, yes, no, ok, back, out, regame;
     RelativeLayout ask, clear;
+
 
     @Override
     public void onBackPressed() {
@@ -66,7 +67,9 @@ public class game extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
-        count = (TextView)findViewById(R.id.count);
+        n_f4_ = (TextView) findViewById(R.id.f_n4_);
+        n_f2_ = (TextView) findViewById(R.id.f_n2_);
+        count = (TextView) findViewById(R.id.count);
         clear = (RelativeLayout) findViewById(R.id.clear);
         out = (Button) findViewById(R.id.out);
         regame = (Button) findViewById(R.id.regame);
@@ -112,6 +115,7 @@ public class game extends AppCompatActivity {
         Intent I = new Intent(this, MainActivity.class);
         switch (v.getId()) {
             case R.id.button13:
+                c--;
                 ok.setClickable(false);
                 back.setClickable(false);
                 menu.setClickable(false);
@@ -132,6 +136,7 @@ public class game extends AppCompatActivity {
             case R.id.finish:
                 c = 0;
                 startActivity(I);
+                overridePendingTransition(R.anim.gone, R.anim.go);
                 this.finish();
                 break;
             case R.id.no:
@@ -151,6 +156,14 @@ public class game extends AppCompatActivity {
                 a = 0;
                 yes.setClickable(false);
                 no.setClickable(false);
+                if (b[0] > 0)
+                    c = 0;
+                else if (b[1] > 0)
+                    c = 1;
+                else if (b[2] > 0)
+                    c = 2;
+                else
+                    c = -1;
                 break;
             case R.id.button6:
                 b[c] = 1;
@@ -199,13 +212,17 @@ public class game extends AppCompatActivity {
                 break;
             case R.id.button14:
                 if (c == 3) {
-                    if (e == Random) s++;
-                    if (d == Random2) s++;
+                    if (e == Random)s++;
+                    if (d == Random2)s++;
                     if (f == Random3) s++;
-                    if (e == Random2 || e == Random3) ball++;
-                    if (d == Random || d == Random3) ball++;
-                    if (f == Random || f == Random2) ball++;
-                    Log.i("",""+s);
+                    if (e == Random2 || e == Random3)ball++;
+                    if (d == Random || d == Random3)ball++;
+                    if (f == Random || f == Random2)ball++;
+                    b[0] = 0;
+                    b[1] = 0;
+                    b[2] = 0;
+                    n_f4_.setText(""+s);
+                    n_f2_.setText(""+ball);
                     if (s == 3) {
                         clear.setVisibility(View.VISIBLE);
                         menu.setClickable(false);
@@ -220,7 +237,7 @@ public class game extends AppCompatActivity {
                         n_9.setClickable(false);
                         ok.setClickable(false);
                         back.setClickable(false);
-                        count.setText(10-g+"번만에 클리어!!");
+                        count.setText(10 - g + "번만에 클리어!!");
                         dw++;
                     } else {
                         n_1.setBackgroundColor(0x60000000);
@@ -250,53 +267,184 @@ public class game extends AppCompatActivity {
                     toast.show();
                     c--;
                 }
+                s = 0;
                 break;
             case R.id.button15:
-                if(c == 1) {
-                    n_1.setClickable(true);n_1.setBackgroundColor(0x60000000);
-                    n_2.setClickable(true);n_2.setBackgroundColor(0x60000000);
-                    n_3.setClickable(true);n_3.setBackgroundColor(0x60000000);
-                    n_4.setClickable(true);n_4.setBackgroundColor(0x60000000);
-                    n_5.setClickable(true);n_5.setBackgroundColor(0x60000000);
-                    n_6.setClickable(true);n_6.setBackgroundColor(0x60000000);
-                    n_7.setClickable(true);n_7.setBackgroundColor(0x60000000);
-                    n_8.setClickable(true);n_8.setBackgroundColor(0x60000000);
-                    n_9.setClickable(true);n_9.setBackgroundColor(0x60000000);
-                    c = c - 2; b[0] = 0;
-                }else if(c == 2){
-                    if(b[1]==1){n_1.setClickable(true);n_1.setBackgroundColor(0x60000000);}
-                    if(b[1]==2){n_2.setClickable(true);n_2.setBackgroundColor(0x60000000);}
-                    if(b[1]==3){n_3.setClickable(true);n_3.setBackgroundColor(0x60000000);}
-                    if(b[1]==4){n_4.setClickable(true);n_4.setBackgroundColor(0x60000000);}
-                    if(b[1]==5){n_5.setClickable(true);n_5.setBackgroundColor(0x60000000);}
-                    if(b[1]==6){n_6.setClickable(true);n_6.setBackgroundColor(0x60000000);}
-                    if(b[1]==7){n_7.setClickable(true);n_7.setBackgroundColor(0x60000000);}
-                    if(b[1]==8){n_8.setClickable(true);n_8.setBackgroundColor(0x60000000);}
-                    if(b[1]==9){n_9.setClickable(true);n_9.setBackgroundColor(0x60000000);}
-                    b[1] = 0;c = c-2;
-                }else if (c == 3){
-                    if(b[2]==1){n_1.setClickable(true);n_1.setBackgroundColor(0x60000000);}
-                    if(b[2]==2){n_2.setClickable(true);n_2.setBackgroundColor(0x60000000);}
-                    if(b[2]==3){n_3.setClickable(true);n_3.setBackgroundColor(0x60000000);}
-                    if(b[2]==4){n_4.setClickable(true);n_4.setBackgroundColor(0x60000000);}
-                    if(b[2]==5){n_5.setClickable(true);n_5.setBackgroundColor(0x60000000);}
-                    if(b[2]==6){n_6.setClickable(true);n_6.setBackgroundColor(0x60000000);}
-                    if(b[2]==7){n_7.setClickable(true);n_7.setBackgroundColor(0x60000000);}
-                    if(b[2]==8){n_8.setClickable(true);n_8.setBackgroundColor(0x60000000);}
-                    if(b[2]==9){n_9.setClickable(true);n_9.setBackgroundColor(0x60000000);}
-                    b[2] = 0; c = c-2;
-                }
-                else
-                c--;
+                if (c == 1) {
+                    n_1.setClickable(true);
+                    n_1.setBackgroundColor(0x60000000);
+                    n_2.setClickable(true);
+                    n_2.setBackgroundColor(0x60000000);
+                    n_3.setClickable(true);
+                    n_3.setBackgroundColor(0x60000000);
+                    n_4.setClickable(true);
+                    n_4.setBackgroundColor(0x60000000);
+                    n_5.setClickable(true);
+                    n_5.setBackgroundColor(0x60000000);
+                    n_6.setClickable(true);
+                    n_6.setBackgroundColor(0x60000000);
+                    n_7.setClickable(true);
+                    n_7.setBackgroundColor(0x60000000);
+                    n_8.setClickable(true);
+                    n_8.setBackgroundColor(0x60000000);
+                    n_9.setClickable(true);
+                    n_9.setBackgroundColor(0x60000000);
+                    c = c - 2;
+                    b[0] = 0;
+                } else if (c == 2) {
+                    if (b[1] == 1) {
+                        n_1.setClickable(true);
+                        n_1.setBackgroundColor(0x60000000);
+                    }
+                    if (b[1] == 2) {
+                        n_2.setClickable(true);
+                        n_2.setBackgroundColor(0x60000000);
+                    }
+                    if (b[1] == 3) {
+                        n_3.setClickable(true);
+                        n_3.setBackgroundColor(0x60000000);
+                    }
+                    if (b[1] == 4) {
+                        n_4.setClickable(true);
+                        n_4.setBackgroundColor(0x60000000);
+                    }
+                    if (b[1] == 5) {
+                        n_5.setClickable(true);
+                        n_5.setBackgroundColor(0x60000000);
+                    }
+                    if (b[1] == 6) {
+                        n_6.setClickable(true);
+                        n_6.setBackgroundColor(0x60000000);
+                    }
+                    if (b[1] == 7) {
+                        n_7.setClickable(true);
+                        n_7.setBackgroundColor(0x60000000);
+                    }
+                    if (b[1] == 8) {
+                        n_8.setClickable(true);
+                        n_8.setBackgroundColor(0x60000000);
+                    }
+                    if (b[1] == 9) {
+                        n_9.setClickable(true);
+                        n_9.setBackgroundColor(0x60000000);
+                    }
+                    b[1] = 0;
+                    c = c - 2;
+                } else if (c == 3) {
+                    n_1.setBackgroundColor(0x60000000);
+                    n_2.setBackgroundColor(0x60000000);
+                    n_3.setBackgroundColor(0x60000000);
+                    n_4.setBackgroundColor(0x60000000);
+                    n_5.setBackgroundColor(0x60000000);
+                    n_6.setBackgroundColor(0x60000000);
+                    n_7.setBackgroundColor(0x60000000);
+                    n_8.setBackgroundColor(0x60000000);
+                    n_9.setBackgroundColor(0x60000000);
+                    n_1.setClickable(true);
+                    n_2.setClickable(true);
+                    n_3.setClickable(true);
+                    n_4.setClickable(true);
+                    n_5.setClickable(true);
+                    n_6.setClickable(true);
+                    n_7.setClickable(true);
+                    n_8.setClickable(true);
+                    n_9.setClickable(true);
+                    if (b[1] == 1) {
+                        n_1.setClickable(false);
+                        n_1.setBackgroundColor(0x70000000);
+                    }
+                    if (b[1] == 2) {
+                        n_2.setClickable(false);
+                        n_2.setBackgroundColor(0x70000000);
+                    }
+                    if (b[1] == 3) {
+                        n_3.setClickable(false);
+                        n_3.setBackgroundColor(0x70000000);
+                    }
+                    if (b[1] == 4) {
+                        n_4.setClickable(false);
+                        n_4.setBackgroundColor(0x70000000);
+                    }
+                    if (b[1] == 5) {
+                        n_5.setClickable(false);
+                        n_5.setBackgroundColor(0x70000000);
+                    }
+                    if (b[1] == 6) {
+                        n_6.setClickable(false);
+                        n_6.setBackgroundColor(0x70000000);
+                    }
+                    if (b[1] == 7) {
+                        n_7.setClickable(false);
+                        n_7.setBackgroundColor(0x70000000);
+                    }
+                    if (b[1] == 8) {
+                        n_8.setClickable(false);
+                        n_8.setBackgroundColor(0x70000000);
+                    }
+                    if (b[1] == 9) {
+                        n_9.setClickable(false);
+                        n_9.setBackgroundColor(0x70000000);
+                    }
+                    if (b[0] == 1) {
+                        n_1.setClickable(false);
+                        n_1.setBackgroundColor(0x70000000);
+                    }
+                    if (b[0] == 2) {
+                        n_2.setClickable(false);
+                        n_2.setBackgroundColor(0x70000000);
+                    }
+                    if (b[0] == 3) {
+                        n_3.setClickable(false);
+                        n_3.setBackgroundColor(0x70000000);
+                    }
+                    if (b[0] == 4) {
+                        n_4.setClickable(false);
+                        n_4.setBackgroundColor(0x70000000);
+                    }
+                    if (b[0] == 5) {
+                        n_5.setClickable(false);
+                        n_5.setBackgroundColor(0x70000000);
+                    }
+                    if (b[0] == 6) {
+                        n_6.setClickable(false);
+                        n_6.setBackgroundColor(0x70000000);
+                    }
+                    if (b[0] == 7) {
+                        n_7.setClickable(false);
+                        n_7.setBackgroundColor(0x70000000);
+                    }
+                    if (b[0] == 8) {
+                        n_8.setClickable(false);
+                        n_8.setBackgroundColor(0x70000000);
+                    }
+                    if (b[0] == 9) {
+                        n_9.setClickable(false);
+                        n_9.setBackgroundColor(0x70000000);
+                    }
+                    b[2] = 0;
+                    c = c - 2;
+                } else
+                    c--;
                 break;
             case R.id.out:
+                overridePendingTransition(R.anim.gone, R.anim.go);
                 startActivity(I);
                 finish();
             case R.id.regame:
+                n_1.setBackgroundColor(0x60000000);
+                n_2.setBackgroundColor(0x60000000);
+                n_3.setBackgroundColor(0x60000000);
+                n_4.setBackgroundColor(0x60000000);
+                n_5.setBackgroundColor(0x60000000);
+                n_6.setBackgroundColor(0x60000000);
+                n_7.setBackgroundColor(0x60000000);
+                n_8.setBackgroundColor(0x60000000);
+                n_9.setBackgroundColor(0x60000000);
                 c = -1;
-                b[0] = 0;
-                b[1] = 0;
-                b[2] = 0;
+                n_f1.setText("0");
+                n_f2.setText("0");
+                n_f3.setText("0");
+                g = 9;
                 ok.setClickable(true);
                 back.setClickable(true);
                 clear.setVisibility(View.GONE);
@@ -321,6 +469,7 @@ public class game extends AppCompatActivity {
         n_f2.setText("" + d);
         f = b[2];
         n_f3.setText("" + f);
+        Log.i("c", "" + c);
         c++;
         if (c == 3) {
             n_1.setClickable(false);

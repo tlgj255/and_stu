@@ -12,9 +12,10 @@
         <RelativeLayout
             android:layout_width="300dp"
             android:layout_height="170dp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:background="#FFFFFF">
+            android:background="#FFFFFF"
+            android:layout_marginTop="148dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
             <TextView
                 android:layout_width="300dp"
                 android:layout_height="60dp"
@@ -50,9 +51,10 @@
             <RelativeLayout
                 android:layout_width="300dp"
                 android:layout_height="170dp"
-                android:layout_centerVertical="true"
+                android:background="#FFFFFF"
+                android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:background="#FFFFFF">
+                android:layout_marginTop="146dp">
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="60dp"
@@ -212,16 +214,16 @@
         android:id="@+id/life"/>
 
     <TextView
-        android:layout_width="30dp"
-        android:layout_height="57dp"
-        android:text="0"
-        android:textColor="#FFFF37"
-        android:background="#66000000"
-        android:textSize="50dp"
-        android:id="@+id/f_n1"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="70dp"
-        android:visibility="visible"/>
+    android:layout_width="30dp"
+    android:layout_height="57dp"
+    android:text="0"
+    android:textColor="#FFFF37"
+    android:background="#66000000"
+    android:textSize="50dp"
+    android:id="@+id/f_n1"
+    android:layout_marginTop="360dp"
+    android:layout_marginLeft="70dp"
+    android:visibility="visible"/>
 
     <TextView
         android:layout_width="30dp"
@@ -231,9 +233,57 @@
         android:background="#66000000"
         android:textSize="50dp"
         android:id="@+id/f_n2"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="360dp"
         android:visibility="visible"
         android:layout_marginLeft="170dp" />
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="57dp"
+        android:text="S"
+        android:textColor="#FFFF37"
+        android:background="#66000000"
+        android:textSize="50dp"
+        android:id="@+id/f_n1_"
+        android:layout_marginTop="24dp"
+        android:visibility="visible"
+        android:layout_below="@+id/life"
+        android:layout_alignEnd="@+id/button7" />
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="57dp"
+        android:text=""
+        android:textColor="#FFFF37"
+        android:background="#66000000"
+        android:textSize="50dp"
+        android:id="@+id/f_n4_"
+        android:visibility="visible"
+        android:layout_alignTop="@+id/f_n1_"
+        android:layout_alignStart="@+id/life" />
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="57dp"
+        android:text=""
+        android:textColor="#FFFF37"
+        android:background="#66000000"
+        android:textSize="50dp"
+        android:id="@+id/f_n2_"
+        android:visibility="visible"
+        android:layout_alignTop="@+id/f_n3_"
+        android:layout_toEndOf="@+id/button8" />
+
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="57dp"
+        android:text="B"
+        android:textColor="#FFFF37"
+        android:background="#66000000"
+        android:textSize="50dp"
+        android:id="@+id/f_n3_"
+        android:visibility="visible"
+        android:layout_alignTop="@+id/f_n1_"
+        android:layout_alignEnd="@+id/life" />
 
 
     <TextView
@@ -244,7 +294,7 @@
         android:background="#66000000"
         android:textSize="50dp"
         android:id="@+id/f_n3"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="360dp"
         android:layout_marginLeft="270dp"
         android:visibility="visible"        />
 
@@ -268,4 +318,5 @@
         android:layout_alignTop="@+id/button14"
         android:onClick="onclick"
         android:layout_alignParentEnd="true" />
+
 </RelativeLayout>

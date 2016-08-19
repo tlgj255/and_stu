@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.button:
                 finish();
+                overridePendingTransition(R.anim.gone,R.anim.go);
                 startActivity(game);
                 break;
             case R.id.button3:
