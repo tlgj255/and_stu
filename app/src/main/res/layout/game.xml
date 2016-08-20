@@ -1,322 +1,372 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <RelativeLayout
+        android:id="@+id/ask"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#AA000000"
-        android:visibility="gone"
-        android:id="@+id/ask"
-        android:onClick="onclick">
+        android:onClick="onclick"
+        android:visibility="gone">
+
         <RelativeLayout
             android:layout_width="300dp"
             android:layout_height="170dp"
-            android:background="#FFFFFF"
-            android:layout_marginTop="148dp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="148dp"
+            android:background="#FFFFFF">
+
             <TextView
                 android:layout_width="300dp"
                 android:layout_height="60dp"
+                android:layout_marginTop="30dp"
                 android:text="   일시정지"
-                android:textStyle="bold"
                 android:textSize="50dp"
-                android:layout_marginTop="30dp"/>
-            <Button
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:id="@+id/no"
-                android:layout_alignTop="@+id/finish"
-                android:layout_alignParentEnd="true"
-                android:text="다시진행"
-                android:onClick="onclick"/>
+                android:textStyle="bold" />
 
             <Button
+                android:id="@+id/no"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/finish"
+                android:onClick="onclick"
+                android:text="다시진행" />
+
+            <Button
+                android:id="@+id/finish"
                 android:layout_width="160dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="110dp"
                 android:layout_toLeftOf="@+id/no"
-                android:id="@+id/finish"
-                android:text="메뉴로"
-                android:onClick="onclick"/>
+                android:onClick="onclick"
+                android:text="메뉴로" />
         </RelativeLayout>
     </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#AA000000"
-            android:visibility="gone"
-            android:id="@+id/clear">
-            <RelativeLayout
-                android:layout_width="300dp"
-                android:layout_height="170dp"
-                android:background="#FFFFFF"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="146dp">
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="60dp"
-                    android:text="  게임클리어"
-                    android:textStyle="bold"
-                    android:textSize="45dp"
-                    />
-                <TextView
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:text="9번만에 클리어!!"
-                    android:textSize="35dp"
-                    android:id="@+id/count"/>
-                <Button
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"
-                    android:id="@+id/out"
-                    android:layout_alignTop="@+id/regame"
-                    android:layout_alignParentEnd="true"
-                    android:text="나가기"
-                    android:onClick="onclick"/>
 
-                <Button
-                    android:layout_width="160dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="110dp"
-                    android:layout_toLeftOf="@+id/out"
-                    android:id="@+id/regame"
-                    android:text="다시도전!!"
-                    android:onClick="onclick"/>
-    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/clear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AA000000"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="170dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="146dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:text="  게임클리어"
+                android:textSize="45dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="60dp"
+                android:text="9번만에 클리어!!"
+                android:textSize="35dp" />
+
+            <Button
+                android:id="@+id/out"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/regame"
+                android:onClick="onclick"
+                android:text="나가기" />
+
+            <Button
+                android:id="@+id/regame"
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="110dp"
+                android:layout_toLeftOf="@+id/out"
+                android:onClick="onclick"
+                android:text="다시도전!!" />
         </RelativeLayout>
+    </RelativeLayout>
+
     <Button
-        android:layout_marginLeft="10dp"
+        android:id="@+id/button4"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="2"
-        android:id="@+id/button4"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:background="#60000000"
         android:onClick="onclick"
-        android:visibility="visible"
-        android:background="#60000000"/>
+        android:text="2"
+        android:visibility="visible" />
 
     <Button
+        android:id="@+id/button5"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="4"
-        android:id="@+id/button5"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/button4"
+        android:background="#60000000"
         android:onClick="onclick"
-        android:visibility="visible"
-        android:background="#60000000"/>
+        android:text="4"
+        android:visibility="visible" />
 
     <Button
-        android:layout_marginLeft="10dp"
+        android:id="@+id/button6"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="1"
-        android:id="@+id/button6"
         android:layout_above="@+id/button4"
         android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:background="#60000000"
         android:onClick="onclick"
-        android:visibility="visible"
-        android:background="#60000000"/>
+        android:text="1"
+        android:visibility="visible" />
 
     <Button
+        android:id="@+id/button7"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="3"
-        android:id="@+id/button7"
         android:layout_alignTop="@+id/button6"
         android:layout_toEndOf="@+id/button4"
+        android:background="#60000000"
         android:onClick="onclick"
-        android:visibility="visible"
-        android:background="#60000000"/>
+        android:text="3"
+        android:visibility="visible" />
 
     <Button
+        android:id="@+id/button8"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="5"
-        android:id="@+id/button8"
         android:layout_alignTop="@+id/button7"
         android:layout_toEndOf="@+id/button5"
+        android:background="#60000000"
         android:onClick="onclick"
-        android:visibility="visible"
-        android:background="#60000000"/>
+        android:text="5"
+        android:visibility="visible" />
 
     <Button
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:text="6"
         android:id="@+id/button9"
-        android:layout_below="@+id/button8"
-        android:layout_alignStart="@+id/button8"
-        android:onClick="onclick"
-        android:visibility="visible"
-        android:background="#60000000"/>
-
-    <Button
         android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="7"
+        android:layout_alignStart="@+id/button8"
+        android:layout_below="@+id/button8"
+        android:background="#60000000"
+        android:onClick="onclick"
+        android:text="6"
+        android:visibility="visible" />
+
+    <Button
         android:id="@+id/button10"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
         android:layout_alignTop="@+id/button8"
         android:layout_toEndOf="@+id/button8"
+        android:background="#60000000"
         android:onClick="onclick"
-        android:visibility="visible"
-        android:background="#60000000"/>
+        android:text="7"
+        android:visibility="visible" />
 
     <Button
+        android:id="@+id/button11"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="8"
-        android:id="@+id/button11"
         android:layout_below="@+id/button8"
         android:layout_toEndOf="@+id/button8"
+        android:background="#60000000"
         android:onClick="onclick"
-        android:visibility="visible"
-        android:background="#60000000"/>
+        android:text="8"
+        android:visibility="visible" />
 
     <Button
-        android:layout_marginRight="10dp"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:text="9"
         android:id="@+id/button12"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/button11"
+        android:layout_marginRight="10dp"
         android:layout_toEndOf="@+id/button10"
+        android:background="#60000000"
         android:onClick="onclick"
-        android:visibility="visible"
-        android:background="#60000000" />
+        android:text="9"
+        android:visibility="visible" />
 
     <Button
-        android:layout_width="70dp"
-        android:layout_marginRight="10dp"
-        android:layout_height="wrap_content"
-        android:text="menu"
         android:id="@+id/button13"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/button12"
+        android:layout_marginRight="10dp"
         android:layout_toEndOf="@+id/button11"
+        android:background="#60000000"
         android:onClick="onclick"
-        android:visibility="visible"
-        android:background="#60000000"/>
+        android:text="menu"
+        android:visibility="visible" />
+
     <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="30dp"
+        android:id="@+id/life"
         android:layout_width="310dp"
         android:layout_height="40dp"
-        android:textColor="#FFFF37"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
         android:background="#66000000"
         android:text=" 목숨이 9번 남았습니다."
-        android:textSize="30dp"
-        android:id="@+id/life"/>
+        android:textColor="#FFFF37"
+        android:textSize="30dp" />
 
     <TextView
-    android:layout_width="30dp"
-    android:layout_height="57dp"
-    android:text="0"
-    android:textColor="#FFFF37"
-    android:background="#66000000"
-    android:textSize="50dp"
-    android:id="@+id/f_n1"
-    android:layout_marginTop="360dp"
-    android:layout_marginLeft="70dp"
-    android:visibility="visible"/>
-
-    <TextView
+        android:id="@+id/f_n1"
         android:layout_width="30dp"
         android:layout_height="57dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="410dp"
+        android:background="#66000000"
         android:text="0"
         android:textColor="#FFFF37"
-        android:background="#66000000"
         android:textSize="50dp"
-        android:id="@+id/f_n2"
-        android:layout_marginTop="360dp"
-        android:visibility="visible"
-        android:layout_marginLeft="170dp" />
+        android:visibility="visible" />
+
     <TextView
+        android:id="@+id/f_n2"
         android:layout_width="30dp"
         android:layout_height="57dp"
+        android:layout_marginLeft="165dp"
+        android:layout_marginTop="410dp"
+        android:background="#66000000"
+        android:text="0"
+        android:textColor="#FFFF37"
+        android:textSize="50dp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/f_n1_"
+        android:layout_width="30dp"
+        android:layout_height="57dp"
+        android:layout_alignEnd="@+id/button7"
+        
+        android:background="#66000000"
         android:text="S"
         android:textColor="#FFFF37"
-        android:background="#66000000"
         android:textSize="50dp"
-        android:id="@+id/f_n1_"
-        android:layout_marginTop="24dp"
         android:visibility="visible"
-        android:layout_below="@+id/life"
-        android:layout_alignEnd="@+id/button7" />
+        android:layout_centerVertical="true"/>
+
     <TextView
-        android:layout_width="30dp"
-        android:layout_height="57dp"
-        android:text=""
-        android:textColor="#FFFF37"
-        android:background="#66000000"
-        android:textSize="50dp"
         android:id="@+id/f_n4_"
-        android:visibility="visible"
-        android:layout_alignTop="@+id/f_n1_"
-        android:layout_alignStart="@+id/life" />
-
-    <TextView
         android:layout_width="30dp"
         android:layout_height="57dp"
-        android:text=""
-        android:textColor="#FFFF37"
+        android:layout_alignStart="@+id/life"
         android:background="#66000000"
-        android:textSize="50dp"
-        android:id="@+id/f_n2_"
-        android:visibility="visible"
-        android:layout_alignTop="@+id/f_n3_"
-        android:layout_toEndOf="@+id/button8" />
-
-
-    <TextView
-        android:layout_width="30dp"
-        android:layout_height="57dp"
-        android:text="B"
-        android:textColor="#FFFF37"
-        android:background="#66000000"
-        android:textSize="50dp"
-        android:id="@+id/f_n3_"
-        android:visibility="visible"
-        android:layout_alignTop="@+id/f_n1_"
-        android:layout_alignEnd="@+id/life" />
-
-
-    <TextView
-        android:layout_width="30dp"
-        android:layout_height="57dp"
         android:text="0"
         android:textColor="#FFFF37"
-        android:background="#66000000"
         android:textSize="50dp"
+        android:visibility="visible"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/f_n2_"
+        android:layout_width="30dp"
+        android:layout_height="57dp"
+        android:layout_alignTop="@+id/f_n3_"
+        android:layout_toEndOf="@+id/button8"
+        android:background="#66000000"
+        android:text="0"
+        android:textColor="#FFFF37"
+        android:textSize="50dp"
+        android:visibility="visible"
+        android:layout_centerVertical="true"/>
+
+
+    <TextView
+        android:id="@+id/f_n3_"
+        android:layout_width="30dp"
+        android:layout_height="57dp"
+        android:layout_alignEnd="@+id/life"
+        android:background="#66000000"
+        android:text="B"
+        android:textColor="#FFFF37"
+        android:textSize="50dp"
+        android:visibility="visible"
+        android:layout_centerVertical="true"/>
+
+
+    <TextView
         android:id="@+id/f_n3"
-        android:layout_marginTop="360dp"
+        android:layout_width="30dp"
+        android:layout_height="57dp"
+        android:layout_marginLeft="272dp"
+        android:layout_marginTop="410dp"
+        android:background="#66000000"
+        android:text="0"
+        android:textColor="#FFFF37"
+        android:textSize="50dp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/f_n1__"
+        android:layout_width="30dp"
+        android:layout_height="54dp"
+        android:layout_marginLeft="70dp"
+        android:background="#66000000"
+        android:text="0"
+        android:textColor="#FFFF37"
+        android:textSize="50dp"
+        android:visibility="visible"
+        android:layout_toStartOf="@+id/button8" />
+
+    <TextView
+        android:id="@+id/f_n2__"
+        android:layout_width="30dp"
+        android:layout_height="54dp"
+        android:layout_marginLeft="170dp"
+        android:background="#66000000"
+        android:text="0"
+        android:textColor="#FFFF37"
+        android:textSize="50dp"
+        android:visibility="visible"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/f_n3__"
+        android:layout_width="30dp"
+        android:layout_height="54dp"
         android:layout_marginLeft="270dp"
-        android:visibility="visible"        />
+        android:background="#66000000"
+        android:text="0"
+        android:textColor="#FFFF37"
+        android:textSize="50dp"
+        android:visibility="visible"
+        android:layout_toStartOf="@+id/button15" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="확인"
         android:id="@+id/button14"
-        android:layout_marginLeft="30dp"
-        android:layout_above="@+id/button6"
-        android:background="#60000000"
-        android:onClick="onclick"/>
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="지우기"
+        android:layout_above="@+id/button6"
+        android:layout_marginLeft="30dp"
+        android:background="#60000000"
+        android:onClick="onclick"
+        android:text="확인" />
+
+    <Button
         android:id="@+id/button15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/button14"
         android:layout_marginRight="30dp"
         android:background="#60000000"
-        android:layout_alignTop="@+id/button14"
         android:onClick="onclick"
-        android:layout_alignParentEnd="true" />
+        android:text="지우기" />
 
 </RelativeLayout>

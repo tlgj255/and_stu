@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -15,8 +17,9 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class game extends AppCompatActivity {
+    Animation check;
     int a = 0, e = 0, Random, Random2, Random3, b[] = new int[3], c = 0, d = 0, f = 0, g = 9, s = 0, ball = 0, dw = 0;
-    TextView n_f1, n_f2, n_f3, life, count, n_f4_, n_f2_;
+    TextView n_f1, n_f2, n_f3, life, count, n_f4_, n_f2_,dab,dab_,dab__;
     Button n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8, n_9, menu, yes, no, ok, back, out, regame;
     RelativeLayout ask, clear;
 
@@ -67,6 +70,26 @@ public class game extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
+        check = AnimationUtils.loadAnimation(this,R.anim.check);
+        check.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        dab = (TextView)findViewById(R.id.f_n1__);
+        dab_ = (TextView)findViewById(R.id.f_n2__);
+        dab__ = (TextView)findViewById(R.id.f_n3__);
         n_f4_ = (TextView) findViewById(R.id.f_n4_);
         n_f2_ = (TextView) findViewById(R.id.f_n2_);
         count = (TextView) findViewById(R.id.count);
@@ -224,6 +247,9 @@ public class game extends AppCompatActivity {
                     n_f4_.setText(""+s);
                     n_f2_.setText(""+ball);
                     if (s == 3) {
+                        dab.setText(""+Random);
+                        dab_.setText(""+Random2);
+                        dab__.setText(""+Random3);
                         clear.setVisibility(View.VISIBLE);
                         menu.setClickable(false);
                         n_1.setClickable(false);
