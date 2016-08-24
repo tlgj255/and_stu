@@ -44,7 +44,12 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onclick(View v){
         Intent game = new Intent(this,game.class);
+        Intent help_ = new Intent(this,help.class);
         switch (v.getId()) {
+            case R.id.button2:
+                overridePendingTransition(R.anim.gone,R.anim.go);
+                startActivity(help_);
+                break;
             case R.id.button:
                 finish();
                 overridePendingTransition(R.anim.gone,R.anim.go);

@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".game"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
+        </activity>
+        <activity android:name=".help"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
     </application>
 
