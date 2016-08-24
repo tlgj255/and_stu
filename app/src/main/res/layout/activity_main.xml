@@ -51,27 +51,13 @@
         android:textStyle="italic"
         android:textSize="25dp"
         android:id="@+id/button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="240dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="69dp"
         android:onClick="onclick"
         android:background="#B56503"
-        android:visibility="visible"/>
-
-    <Button
-        android:layout_width="170dp"
-        android:layout_height="60dp"
-        android:text="도움말"
-        android:textStyle="italic"
-        android:textSize="25dp"
-        android:id="@+id/button2"
-        android:layout_alignTop="@+id/button"
-        android:layout_alignEnd="@+id/button"
-        android:layout_marginTop="103dp"
-        android:onClick="onclick"
-        android:background="#B56503"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:layout_above="@+id/button3"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="170dp"
@@ -80,12 +66,12 @@
         android:textStyle="italic"
         android:textSize="25dp"
         android:id="@+id/button3"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/button2"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="74dp"
         android:onClick="onclick"
         android:background="#B56503"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/button" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="40dp"

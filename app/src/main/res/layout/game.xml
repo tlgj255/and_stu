@@ -1,52 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <RelativeLayout
-        android:id="@+id/ask"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#AA000000"
-        android:onClick="onclick"
-        android:visibility="gone">
-
-        <RelativeLayout
-            android:layout_width="300dp"
-            android:layout_height="170dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="148dp"
-            android:background="#FFFFFF">
-
-            <TextView
-                android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="30dp"
-                android:text="   일시정지"
-                android:textSize="50dp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/no"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignTop="@+id/finish"
-                android:onClick="onclick"
-                android:text="다시진행" />
-
-            <Button
-                android:id="@+id/finish"
-                android:layout_width="160dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="110dp"
-                android:layout_toLeftOf="@+id/no"
-                android:onClick="onclick"
-                android:text="메뉴로" />
-        </RelativeLayout>
-    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/clear"
@@ -98,6 +55,51 @@
                 android:text="다시도전!!" />
         </RelativeLayout>
     </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AA000000"
+        android:onClick="onclick"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="170dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="148dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:text="   일시정지"
+                android:textSize="50dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/no"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/finish"
+                android:onClick="onclick"
+                android:text="다시진행" />
+
+            <Button
+                android:id="@+id/finish"
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="110dp"
+                android:layout_toLeftOf="@+id/no"
+                android:onClick="onclick"
+                android:text="메뉴로" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
 
     <Button
         android:id="@+id/button4"

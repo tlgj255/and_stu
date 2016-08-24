@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 public class game extends AppCompatActivity {
     Animation check;
-    int a = 0,Random, Random2, Random3, b[] = new int[3], c = 0, g = 9, s1 = 0, s2 = 0, s3 = 0, s = 0, ball = 0, dw = 0;
+    int a = 0,Random, Random2, Random3, b[] = new int[3], c = 0, g = 9, s1 = 0, s2 = 0, s3 = 0, s = 0, ball = 0, dw = 0,as = 0;
     TextView n_f1, n_f2, n_f3, life, count, n_f1_, n_f3_, n_f4_, n_f2_, dab, dab_, dab__;
     Button n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8, n_9, menu, yes, no, ok, back, out, regame;
     RelativeLayout ask, clear;
@@ -31,16 +31,6 @@ public class game extends AppCompatActivity {
             ok.setClickable(true);
             back.setClickable(true);
             ask.setVisibility(View.GONE);
-            n_1.setClickable(true);
-            n_2.setClickable(true);
-            n_3.setClickable(true);
-            n_4.setClickable(true);
-            n_5.setClickable(true);
-            n_6.setClickable(true);
-            n_7.setClickable(true);
-            n_8.setClickable(true);
-            n_9.setClickable(true);
-            menu.setClickable(true);
             a = 0;
             yes.setClickable(false);
             no.setClickable(false);
@@ -55,20 +45,7 @@ public class game extends AppCompatActivity {
                 c = 2;
             else
                 c = -1;
-            menu.setClickable(false);
-            ok.setClickable(false);
-            back.setClickable(false);
-            life.setClickable(false);
             ask.setVisibility(View.VISIBLE);
-            n_1.setClickable(false);
-            n_2.setClickable(false);
-            n_3.setClickable(false);
-            n_4.setClickable(false);
-            n_5.setClickable(false);
-            n_6.setClickable(false);
-            n_7.setClickable(false);
-            n_8.setClickable(false);
-            n_9.setClickable(false);
             yes.setClickable(true);
             no.setClickable(true);
             a = 1;
@@ -138,25 +115,37 @@ public class game extends AppCompatActivity {
         Log.i("Random3", "" + Random3);
     }
     public void onclick(View v) {
+        if (a == 1){
+            n_1.setClickable(false);
+                    n_2.setClickable(false);
+            n_3.setClickable(false);
+                    n_4.setClickable(false);
+            n_5.setClickable(false);
+                    n_6.setClickable(false);
+            n_7.setClickable(false);
+                    n_8.setClickable(false);
+            n_9.setClickable(false);
+                    menu.setClickable(false);
+        }
+        else {
+            n_1.setClickable(true);
+            n_2.setClickable(true);
+            n_3.setClickable(true);
+            n_4.setClickable(true);
+            n_5.setClickable(true);
+            n_6.setClickable(true);
+            n_7.setClickable(true);
+            n_8.setClickable(true);
+            n_9.setClickable(true);
+            menu.setClickable(true);
+        }
         Toast toast;
         toast = Toast.makeText(game.this, "숫자를 마저 입력해주세요", Toast.LENGTH_SHORT);
         Intent I = new Intent(this, MainActivity.class);
         switch (v.getId()) {
             case R.id.button13:
-                c--;
-                ok.setClickable(false);
-                back.setClickable(false);
-                menu.setClickable(false);
+
                 ask.setVisibility(View.VISIBLE);
-                n_1.setClickable(false);
-                n_2.setClickable(false);
-                n_3.setClickable(false);
-                n_4.setClickable(false);
-                n_5.setClickable(false);
-                n_6.setClickable(false);
-                n_7.setClickable(false);
-                n_8.setClickable(false);
-                n_9.setClickable(false);
                 yes.setClickable(true);
                 no.setClickable(true);
                 a = 1;
@@ -168,19 +157,7 @@ public class game extends AppCompatActivity {
                 this.finish();
                 break;
             case R.id.no:
-                ok.setClickable(true);
-                back.setClickable(true);
                 ask.setVisibility(View.GONE);
-                n_1.setClickable(true);
-                n_2.setClickable(true);
-                n_3.setClickable(true);
-                n_4.setClickable(true);
-                n_5.setClickable(true);
-                n_6.setClickable(true);
-                n_7.setClickable(true);
-                n_8.setClickable(true);
-                n_9.setClickable(true);
-                menu.setClickable(true);
                 a = 0;
                 yes.setClickable(false);
                 no.setClickable(false);
@@ -196,7 +173,7 @@ public class game extends AppCompatActivity {
                 b[c] = 2; n_2.setClickable(false);
                 break;
             case R.id.button7:
-                n_3.setClickable(false); b[c] = 3;
+                b[c] = 3;  n_3.setClickable(false);
                 break;
             case R.id.button5:
                 b[c] = 4; n_4.setClickable(false);
@@ -205,7 +182,7 @@ public class game extends AppCompatActivity {
                 b[c] = 5; n_5.setClickable(false);
                 break;
             case R.id.button9:
-                n_6.setClickable(false); b[c] = 6;
+                b[c] = 6; n_6.setClickable(false);
                 break;
             case R.id.button10:
                 b[c] = 7; n_7.setClickable(false);
@@ -255,31 +232,11 @@ public class game extends AppCompatActivity {
                         dab.setText("" + Random);
                         dab_.setText("" + Random2);
                         dab__.setText("" + Random3);
+                        a = 1;
                         clear.setVisibility(View.VISIBLE);
-                        menu.setClickable(false);
-                        n_1.setClickable(false);
-                        n_2.setClickable(false);
-                        n_3.setClickable(false);
-                        n_4.setClickable(false);
-                        n_5.setClickable(false);
-                        n_6.setClickable(false);
-                        n_7.setClickable(false);
-                        n_8.setClickable(false);
-                        n_9.setClickable(false);
-                        ok.setClickable(false);
-                        back.setClickable(false);
                         count.setText(10 - g + "번만에 클리어!!");
                         dw++;
                     } else {
-                        n_1.setClickable(true);
-                        n_2.setClickable(true);
-                        n_3.setClickable(true);
-                        n_4.setClickable(true);
-                        n_5.setClickable(true);
-                        n_6.setClickable(true);
-                        n_7.setClickable(true);
-                        n_8.setClickable(true);
-                        n_9.setClickable(true);
                         c = -1;
                         g--;
                         life.setText("목숨이 " + g + "번 남았습니다.");
@@ -381,7 +338,8 @@ public class game extends AppCompatActivity {
         n_f2.setText("" + b[1]);
         n_f3.setText("" + b[2]);
         Log.i("c", "" + c);
-        c++;
+        if (a == 0)
+      c++;
         if (c == 3) {
             n_1.setClickable(false);
             n_2.setClickable(false);

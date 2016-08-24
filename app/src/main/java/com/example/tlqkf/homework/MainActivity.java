@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity {
     int a = 0 ;
-    Button start,help,quit,yes,no;
+    Button start,quit,yes,no;
     RelativeLayout ask;
     @Override
     public void onBackPressed(){
@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
             ask.setVisibility(View.GONE);
             start.setVisibility(View.VISIBLE);
             quit.setVisibility(View.VISIBLE);
-            help.setVisibility(View.VISIBLE);
             a = 0 ;
             yes.setClickable(false);
             no.setClickable(false);
@@ -25,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
             ask.setVisibility(View.VISIBLE);
         start.setVisibility(View.GONE);
         quit.setVisibility(View.GONE);
-        help.setVisibility(View.GONE);
-
             yes.setClickable(true);
             no.setClickable(true);
         a = 1 ;}
@@ -36,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         start = (Button)findViewById(R.id.button);
-        help = (Button)findViewById(R.id.button2);
         quit = (Button)findViewById(R.id.button3);
         ask = (RelativeLayout)findViewById(R.id.ask);
         yes = (Button)findViewById(R.id.finish);
@@ -44,12 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onclick(View v){
         Intent game = new Intent(this,game.class);
-        Intent help_ = new Intent(this,help.class);
         switch (v.getId()) {
-            case R.id.button2:
-                overridePendingTransition(R.anim.gone,R.anim.go);
-                startActivity(help_);
-                break;
             case R.id.button:
                 finish();
                 overridePendingTransition(R.anim.gone,R.anim.go);
@@ -59,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 ask.setVisibility(View.VISIBLE);
                 start.setVisibility(View.GONE);
                 quit.setVisibility(View.GONE);
-                help.setVisibility(View.GONE);
                 yes.setClickable(true);
                 no.setClickable(true);
 
@@ -72,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
                 ask.setVisibility(View.GONE);
                 start.setVisibility(View.VISIBLE);
                 quit.setVisibility(View.VISIBLE);
-                help.setVisibility(View.VISIBLE);
                 a = 0;
                 yes.setClickable(false);
                 no.setClickable(false);
