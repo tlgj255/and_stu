@@ -20,9 +20,9 @@
         <TextView
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:text=" 종료할꼬얌?"
+            android:text="종료하시겠습니까?"
             android:textStyle="bold"
-            android:textSize="50dp"
+            android:textSize="34dp"
             android:layout_marginTop="30dp"/>
         <Button
             android:layout_width="150dp"
@@ -30,7 +30,7 @@
             android:id="@+id/no"
             android:layout_alignTop="@+id/finish"
             android:layout_alignParentEnd="true"
-            android:text="안할꼬얌"
+            android:text="아니요"
             android:onClick="onclick"/>
 
         <Button
@@ -39,7 +39,7 @@
             android:layout_marginTop="110dp"
             android:layout_toLeftOf="@+id/no"
             android:id="@+id/finish"
-            android:text="할꼬얌!!"
+            android:text="네"
             android:onClick="onclick"/>
     </RelativeLayout>
 
