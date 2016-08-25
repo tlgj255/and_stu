@@ -5,6 +5,49 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/note">
+    <RelativeLayout
+        android:id="@+id/die"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AA000000"
+        android:onClick="onclick"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="170dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="148dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:text="      패...배"
+                android:textSize="50dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/re"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/bye"
+                android:onClick="onclick"
+                android:text="다시시작" />
+
+            <Button
+                android:id="@+id/bye"
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="110dp"
+                android:layout_toLeftOf="@+id/re"
+                android:onClick="onclick"
+                android:text="메뉴로" />
+        </RelativeLayout>
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/clear"
@@ -112,8 +155,7 @@
         android:layout_marginLeft="10dp"
         android:background="#60000000"
         android:onClick="onclick"
-        android:text="2"
-        android:visibility="visible" />
+        android:text="6" />
 
     <Button
         android:id="@+id/button5"
@@ -123,8 +165,7 @@
         android:layout_toEndOf="@+id/button4"
         android:background="#60000000"
         android:onClick="onclick"
-        android:text="4"
-        android:visibility="visible" />
+        android:text="7" />
 
     <Button
         android:id="@+id/button6"
@@ -135,8 +176,7 @@
         android:layout_marginLeft="10dp"
         android:background="#60000000"
         android:onClick="onclick"
-        android:text="1"
-        android:visibility="visible" />
+        android:text="1" />
 
     <Button
         android:id="@+id/button7"
@@ -146,7 +186,7 @@
         android:layout_toEndOf="@+id/button4"
         android:background="#60000000"
         android:onClick="onclick"
-        android:text="3"
+        android:text="2"
         android:visibility="visible" />
 
     <Button
@@ -157,8 +197,7 @@
         android:layout_toEndOf="@+id/button5"
         android:background="#60000000"
         android:onClick="onclick"
-        android:text="5"
-        android:visibility="visible" />
+        android:text="3" />
 
     <Button
         android:id="@+id/button9"
@@ -168,8 +207,7 @@
         android:layout_below="@+id/button8"
         android:background="#60000000"
         android:onClick="onclick"
-        android:text="6"
-        android:visibility="visible" />
+        android:text="8" />
 
     <Button
         android:id="@+id/button10"
@@ -179,8 +217,7 @@
         android:layout_toEndOf="@+id/button8"
         android:background="#60000000"
         android:onClick="onclick"
-        android:text="7"
-        android:visibility="visible" />
+        android:text="4" />
 
     <Button
         android:id="@+id/button11"
@@ -190,8 +227,7 @@
         android:layout_toEndOf="@+id/button8"
         android:background="#60000000"
         android:onClick="onclick"
-        android:text="8"
-        android:visibility="visible" />
+        android:text="9" />
 
     <Button
         android:id="@+id/button12"
@@ -202,8 +238,7 @@
         android:layout_toEndOf="@+id/button10"
         android:background="#60000000"
         android:onClick="onclick"
-        android:text="9"
-        android:visibility="visible" />
+        android:text="5" />
 
     <Button
         android:id="@+id/button13"
@@ -214,8 +249,7 @@
         android:layout_toEndOf="@+id/button11"
         android:background="#60000000"
         android:onClick="onclick"
-        android:text="menu"
-        android:visibility="visible" />
+        android:text="menu" />
 
     <TextView
         android:id="@+id/life"
