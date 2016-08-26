@@ -28,18 +28,10 @@ public class game extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (a == 1) {
-        } else if (dw == 1) {
+        if (a == 1) {//a가 1일땐 뒤로가기를 눌러도 아무것도 일어나지 않음
+        } else if (dw == 1) {//dw가 1일땐 뒤로가기를 눌러도 아무것도 일어나지 않음
 
         } else if (a == 0){
-            if (b[0] > 0)
-                c = 0;
-           if (b[1] > 0)
-                c = 1;
-            if (b[2] > 0)
-                c = 2;
-            else
-                c = -1;
             n_1.setClickable(false);
             n_2.setClickable(false);
             n_3.setClickable(false);
@@ -50,7 +42,7 @@ public class game extends AppCompatActivity {
             n_8.setClickable(false);
             n_9.setClickable(false);
             menu.setClickable(false);
-            ask.setVisibility(View.VISIBLE);
+            ask.setVisibility(View.VISIBLE);//뒤로가기를 눌렀을때 메뉴로 돌아갈건지 물어보는 레이아웃 띄우기,버튼 비활성화
             yes.setClickable(true);
             no.setClickable(true);
             R1.setTextColor(0x00000000);
@@ -75,7 +67,7 @@ public class game extends AppCompatActivity {
         bye = (Button)findViewById(R.id.bye);
         die = (RelativeLayout)findViewById(R.id.die);
         check = AnimationUtils.loadAnimation(this, R.anim.check);
-        check.setAnimationListener(new Animation.AnimationListener() {
+        check.setAnimationListener(new Animation.AnimationListener() {//애니매이션 선언
             @Override
             public void onAnimationStart(Animation animation) {
             }
@@ -131,7 +123,7 @@ public class game extends AppCompatActivity {
         Random = (int) (Math.random() * 9) + 1;
         Random2 = (int) (Math.random() * 9) + 1;
         Random3 = (int) (Math.random() * 9) + 1;
-        while (true) {
+        while (true) {//랜덤수가 중복되지 않을때까지 돌리기
             if (Random == Random2 || Random == Random3 || Random2 == Random3) {
                 Random = (int) (Math.random() * 9) + 1;
                 Random2 = (int) (Math.random() * 9) + 1;
@@ -139,7 +131,7 @@ public class game extends AppCompatActivity {
             } else {
                 break;
             }
-        }
+        }//랜덤수 3개
         Log.i("Random", "" + Random);
         Log.i("Random2", "" + Random2);
         Log.i("Random3", "" + Random3);
@@ -152,7 +144,7 @@ public class game extends AppCompatActivity {
         toast = Toast.makeText(game.this, "숫자를 마저 입력해주세요", Toast.LENGTH_SHORT);
         Intent I = new Intent(this, MainActivity.class);
         switch (v.getId()) {
-            case R.id.button13:
+            case R.id.button13://버튼를 눌렀을때 메뉴로 돌아갈건지 물어보는 레이아웃 띄우기,버튼 비활성화
                 a = 1;
                 R1.setTextColor(0x00000000);
                 R2.setTextColor(0x00000000);
@@ -183,7 +175,7 @@ public class game extends AppCompatActivity {
                 overridePendingTransition(R.anim.gone, R.anim.go);
                 this.finish();
                 break;
-            case R.id.no:
+            case R.id.no://원상태로 복귀
                 a = 0;
                 R1.setTextColor(0Xff000000);
                 R2.setTextColor(0Xff000000);
@@ -263,7 +255,7 @@ public class game extends AppCompatActivity {
                     s = s1 + s2 + s3;
                     Log.i("s1,s2,s3", "" + s1 + "," + s2 + "," + s3);
 
-                    if (s == 3) {
+                    if (s == 3) {//게임 클리어시 클리어했다는 문구내보내기
                         R1.setTextColor(0x00000000);
                         R2.setTextColor(0x00000000);
                         R3.setTextColor(0x00000000);
@@ -289,15 +281,15 @@ public class game extends AppCompatActivity {
                         clear.setVisibility(View.VISIBLE);
                         count.setText(10 - g + "번만에 클리어!!");
                         dw++;
-                    } else {
-                        n_f4_.setVisibility(View.VISIBLE);
-                        n_f4_.startAnimation(check);
-                        n_f3_.setVisibility(View.VISIBLE);
-                        n_f3_.startAnimation(check);
-                        n_f2_.setVisibility(View.VISIBLE);
-                        n_f2_.startAnimation(check);
-                        n_f1_.setVisibility(View.VISIBLE);
-                        n_f1_.startAnimation(check);
+                    } else {//클리어 못했을 시
+                        n_f4_.setVisibility(View.VISIBLE);//애니매이션 나타내기
+                        n_f4_.startAnimation(check);//애니매이션 나타내기
+                        n_f3_.setVisibility(View.VISIBLE);//애니매이션 나타내기
+                        n_f3_.startAnimation(check);//애니매이션 나타내기
+                        n_f2_.setVisibility(View.VISIBLE);//애니매이션 나타내기
+                        n_f2_.startAnimation(check);//애니매이션 나타내기
+                        n_f1_.setVisibility(View.VISIBLE);//애니매이션 나타내기
+                        n_f1_.startAnimation(check);//애니매이션 나타내기
                         n_f4_.setText("" + s);
                         n_f2_.setText("" + ball);
                         new Handler().postDelayed(new Runnable() {
@@ -309,12 +301,12 @@ public class game extends AppCompatActivity {
                                 n_f3_.setVisibility(View.GONE);
                                 mHandler.sendEmptyMessage(0);
                             }
-                        }, 2200);
+                        }, 2200);//2.2초후에 위에 명령어들 실행
                         Handler mHandler = new Handler() {
                             public void handleMessage(Message msg) {
                             }
                         };
-                        if (g == 10) {
+                        if (g == 10) {//화면에 라운드,스트라이크,볼 수 나타내기
                             R1.setText("1R " + s + "S " + ball + "B\n   " + b[0] + " " + b[1] + " " + b[2]);
                             R1.setVisibility(View.VISIBLE);
                         } else if (g == 9) {
@@ -358,7 +350,7 @@ public class game extends AppCompatActivity {
                         g--;
                         if(g > 0)
                         life.setText("목숨이 " + (g-1) + "번 남았습니다.");
-                        if (g == 0){
+                        if (g == 0){//목숨이 없어졌을시 사망문구
                             dw = 1;
                             R1.setTextColor(0x00000000);
                             R2.setTextColor(0x00000000);
@@ -372,24 +364,24 @@ public class game extends AppCompatActivity {
                             die.setVisibility(View.VISIBLE);
                         }
                     }
-                } else {
+                } else {//수를 3개보다 적게 입력했을시
                     toast.setGravity(Gravity.BOTTOM, 0, 500);
                     toast.show();
                     c--;
                 }
                 s = 0;
                 break;
-            case R.id.re:
+            case R.id.re://다시시작
                 startActivity(re);
                 finish();
-                overridePendingTransition(R.anim.gone, R.anim.go);
+                overridePendingTransition(R.anim.gone, R.anim.go);//액티비티 넘어갈때 애니매이션효과
                 break;
             case R.id.bye:
-                overridePendingTransition(R.anim.gone, R.anim.go);
+                overridePendingTransition(R.anim.gone, R.anim.go);//메뉴로 가기
                 startActivity(I);
                 finish();
                 break;
-            case R.id.button15:
+            case R.id.button15://지우기 키를 눌렀을때 클릭이 비활성화 돼있는 것을 활성화시키는 작업
                 if (c == 1) {
                     n_1.setClickable(true);
                     n_2.setClickable(true);
@@ -447,12 +439,12 @@ public class game extends AppCompatActivity {
                 } else
                     c--;
                 break;
-            case R.id.out:
+            case R.id.out://메뉴로 가기
                 overridePendingTransition(R.anim.gone, R.anim.go);
                 startActivity(I);
                 finish();
                 break;
-            case R.id.regame:
+            case R.id.regame://게임 다시 시작
                startActivity(re);
                 finish();
                 overridePendingTransition(R.anim.gone, R.anim.go);
@@ -463,7 +455,7 @@ public class game extends AppCompatActivity {
         n_f3.setText("" + b[2]);
         Log.i("c", "" + c);
         c++;
-        if (c == 3) {
+        if (c == 3) {//숫자를 3번 입력시 클릭 비활성화
             n_1.setClickable(false);
             n_2.setClickable(false);
             n_3.setClickable(false);
