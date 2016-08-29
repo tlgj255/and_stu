@@ -30,30 +30,10 @@ public class game extends AppCompatActivity {
     public void onBackPressed() {
         if (a == 1) {//a가 1일땐 뒤로가기를 눌러도 아무것도 일어나지 않음
         } else if (dw == 1) {//dw가 1일땐 뒤로가기를 눌러도 아무것도 일어나지 않음
-
         } else if (a == 0){
-            n_1.setClickable(false);
-            n_2.setClickable(false);
-            n_3.setClickable(false);
-            n_4.setClickable(false);
-            n_5.setClickable(false);
-            n_6.setClickable(false);
-            n_7.setClickable(false);
-            n_8.setClickable(false);
-            n_9.setClickable(false);
-            menu.setClickable(false);
             ask.setVisibility(View.VISIBLE);//뒤로가기를 눌렀을때 메뉴로 돌아갈건지 물어보는 레이아웃 띄우기,버튼 비활성화
             yes.setClickable(true);
             no.setClickable(true);
-            R1.setTextColor(0x00000000);
-            R2.setTextColor(0x00000000);
-            R3.setTextColor(0x00000000);
-            R4.setTextColor(0x00000000);
-            R5.setTextColor(0x00000000);
-            R6.setTextColor(0x00000000);
-            R7.setTextColor(0x00000000);
-            R8.setTextColor(0x00000000);
-            R9.setTextColor(0x00000000);
             a = 1;
         }
     }
@@ -146,25 +126,6 @@ public class game extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.button13://버튼를 눌렀을때 메뉴로 돌아갈건지 물어보는 레이아웃 띄우기,버튼 비활성화
                 a = 1;
-                R1.setTextColor(0x00000000);
-                R2.setTextColor(0x00000000);
-                R3.setTextColor(0x00000000);
-                R4.setTextColor(0x00000000);
-                R5.setTextColor(0x00000000);
-                R6.setTextColor(0x00000000);
-                R7.setTextColor(0x00000000);
-                R8.setTextColor(0x00000000);
-                R9.setTextColor(0x00000000);
-                n_1.setClickable(false);
-                n_2.setClickable(false);
-                n_3.setClickable(false);
-                n_4.setClickable(false);
-                n_5.setClickable(false);
-                n_6.setClickable(false);
-                n_7.setClickable(false);
-                n_8.setClickable(false);
-                n_9.setClickable(false);
-                menu.setClickable(false);
                 ask.setVisibility(View.VISIBLE);
                 yes.setClickable(true);
                 no.setClickable(true);
@@ -177,15 +138,6 @@ public class game extends AppCompatActivity {
                 break;
             case R.id.no://원상태로 복귀
                 a = 0;
-                R1.setTextColor(0Xff000000);
-                R2.setTextColor(0Xff000000);
-                R3.setTextColor(0Xff000000);
-                R4.setTextColor(0Xff000000);
-                R5.setTextColor(0Xff000000);
-                R6.setTextColor(0Xff000000);
-                R7.setTextColor(0Xff000000);
-                R8.setTextColor(0Xff000000);
-                R9.setTextColor(0Xff000000);
                 n_1.setClickable(true);
                 n_2.setClickable(true);
                 n_3.setClickable(true);
@@ -256,28 +208,9 @@ public class game extends AppCompatActivity {
                     Log.i("s1,s2,s3", "" + s1 + "," + s2 + "," + s3);
 
                     if (s == 3) {//게임 클리어시 클리어했다는 문구내보내기
-                        R1.setTextColor(0x00000000);
-                        R2.setTextColor(0x00000000);
-                        R3.setTextColor(0x00000000);
-                        R4.setTextColor(0x00000000);
-                        R5.setTextColor(0x00000000);
-                        R6.setTextColor(0x00000000);
-                        R7.setTextColor(0x00000000);
-                        R8.setTextColor(0x00000000);
-                        R9.setTextColor(0x00000000);
                         dab.setText("" + Random);
                         dab_.setText("" + Random2);
                         dab__.setText("" + Random3);
-                        n_1.setClickable(false);
-                        n_2.setClickable(false);
-                        n_3.setClickable(false);
-                        n_4.setClickable(false);
-                        n_5.setClickable(false);
-                        n_6.setClickable(false);
-                        n_7.setClickable(false);
-                        n_8.setClickable(false);
-                        n_9.setClickable(false);
-                        menu.setClickable(false);
                         clear.setVisibility(View.VISIBLE);
                         count.setText(10 - g + "번만에 클리어!!");
                         dw++;
@@ -352,15 +285,6 @@ public class game extends AppCompatActivity {
                         life.setText("목숨이 " + (g-1) + "번 남았습니다.");
                         if (g == 0){//목숨이 없어졌을시 사망문구
                             dw = 1;
-                            R1.setTextColor(0x00000000);
-                            R2.setTextColor(0x00000000);
-                            R3.setTextColor(0x00000000);
-                            R4.setTextColor(0x00000000);
-                            R5.setTextColor(0x00000000);
-                            R6.setTextColor(0x00000000);
-                            R7.setTextColor(0x00000000);
-                            R8.setTextColor(0x00000000);
-                            R9.setTextColor(0x00000000);
                             die.setVisibility(View.VISIBLE);
                         }
                     }

@@ -1,151 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/note">
-    <RelativeLayout
-        android:id="@+id/die"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#AA000000"
-        android:onClick="onclick"
-        android:visibility="gone">
-
-        <RelativeLayout
-            android:layout_width="300dp"
-            android:layout_height="170dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="148dp"
-            android:background="#FFFFFF">
-
-            <TextView
-                android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="30dp"
-                android:text="      패...배"
-                android:textSize="50dp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/re"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignTop="@+id/bye"
-                android:onClick="onclick"
-                android:text="다시시작" />
-
-            <Button
-                android:id="@+id/bye"
-                android:layout_width="160dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="110dp"
-                android:layout_toLeftOf="@+id/re"
-                android:onClick="onclick"
-                android:text="메뉴로" />
-        </RelativeLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/clear"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#AA000000"
-        android:visibility="gone">
-
-        <RelativeLayout
-            android:layout_width="300dp"
-            android:layout_height="170dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="146dp"
-            android:background="#FFFFFF">
-
-            <TextView
-                android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:text="  게임클리어"
-                android:textSize="45dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="60dp"
-                android:text="9번만에 클리어!!"
-                android:textSize="35dp" />
-
-            <Button
-                android:id="@+id/out"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignTop="@+id/regame"
-                android:onClick="onclick"
-                android:text="나가기" />
-
-            <Button
-                android:id="@+id/regame"
-                android:layout_width="160dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="110dp"
-                android:layout_toLeftOf="@+id/out"
-                android:onClick="onclick"
-                android:text="다시도전!!" />
-        </RelativeLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/ask"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#AA000000"
-        android:onClick="onclick"
-        android:visibility="gone">
-
-        <RelativeLayout
-            android:layout_width="300dp"
-            android:layout_height="170dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="148dp"
-            android:background="#FFFFFF">
-
-            <TextView
-                android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="30dp"
-                android:text="   일시정지"
-                android:textSize="50dp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/no"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignTop="@+id/finish"
-                android:onClick="onclick"
-                android:text="다시진행" />
-
-            <Button
-                android:id="@+id/finish"
-                android:layout_width="160dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="110dp"
-                android:layout_toLeftOf="@+id/no"
-                android:onClick="onclick"
-                android:text="메뉴로" />
-        </RelativeLayout>
-    </RelativeLayout>
-
-
-
+   <RelativeLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
     <Button
         android:id="@+id/button4"
         android:layout_width="70dp"
@@ -402,12 +264,13 @@
         android:id="@+id/button15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/button14"
         android:layout_marginRight="30dp"
         android:background="#60000000"
         android:onClick="onclick"
-        android:text="지우기" />
+        android:text="지우기"
+        android:layout_alignBaseline="@+id/button14"
+        android:layout_alignBottom="@+id/button14"
+        android:layout_alignEnd="@+id/button12" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -492,5 +355,141 @@
         android:layout_marginLeft="250dp" />
 
 
+   </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/clear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AA000000"
+        android:visibility="gone">
 
-</RelativeLayout>
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="170dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="146dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:text="  게임클리어"
+                android:textSize="45dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="60dp"
+                android:text="9번만에 클리어!!"
+                android:textSize="35dp" />
+
+            <Button
+                android:id="@+id/out"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/regame"
+                android:onClick="onclick"
+                android:text="나가기" />
+
+            <Button
+                android:id="@+id/regame"
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="110dp"
+                android:layout_toLeftOf="@+id/out"
+                android:onClick="onclick"
+                android:text="다시도전!!" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AA000000"
+        android:onClick="onclick"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="170dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="148dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:text="   일시정지"
+                android:textSize="50dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/no"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/finish"
+                android:onClick="onclick"
+                android:text="다시진행" />
+
+            <Button
+                android:id="@+id/finish"
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="110dp"
+                android:layout_toLeftOf="@+id/no"
+                android:onClick="onclick"
+                android:text="메뉴로" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/die"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AA000000"
+        android:onClick="onclick"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="170dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="148dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:text="   게임패배"
+                android:textSize="50dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/re"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/bye"
+                android:onClick="onclick"
+                android:text="다시진행" />
+
+            <Button
+                android:id="@+id/bye"
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="110dp"
+                android:layout_toLeftOf="@+id/re"
+                android:onClick="onclick"
+                android:text="메뉴로" />
+        </RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>
