@@ -12,20 +12,23 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Toast;
 
 
-public class game extends AppCompatActivity {
+public class
+game extends AppCompatActivity {
     Animation check;
     int a = 0, Random, Random2, Random3, b[] = new int[3], c = 0, g = 10, s1 = 0, s2 = 0, s3 = 0, s = 0, ball = 0, dw = 0;
     TextView n_f1, n_f2, n_f3, life, count, n_f1_, n_f3_, n_f4_, n_f2_, dab, dab_, dab__, R1, R2, R3, R4, R5, R6, R7, R8, R9;
-    Button n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8, n_9, menu, yes, no, ok, back, out, regame, re_, bye;
-    RelativeLayout ask, clear, die;
+    Button n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8, n_9, menu, yes, no, ok, back, out, regame, re_, bye,good;
+    EditText name;
+    RelativeLayout ask, clear, die,record;
     private Handler mHandler;
-
+    database db;
     @Override
     public void onBackPressed() {
         if (a == 1) {//a가 1일땐 뒤로가기를 눌러도 아무것도 일어나지 않음
@@ -37,9 +40,9 @@ public class game extends AppCompatActivity {
             a = 1;
         }
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.game);
@@ -61,6 +64,9 @@ public class game extends AppCompatActivity {
             }
         });
         mHandler = new Handler();
+        record = (RelativeLayout)findViewById(R.id.record);
+        good = (Button)findViewById(R.id.good);
+        name = (EditText)findViewById(R.id.name);
         R1 = (TextView) findViewById(R.id.textView2);
         R2 = (TextView) findViewById(R.id.textView3);
         R3 = (TextView) findViewById(R.id.textView4);
@@ -124,6 +130,7 @@ public class game extends AppCompatActivity {
         toast = Toast.makeText(game.this, "숫자를 마저 입력해주세요", Toast.LENGTH_SHORT);
         Intent I = new Intent(this, MainActivity.class);
         switch (v.getId()) {
+
             case R.id.button13://버튼를 눌렀을때 메뉴로 돌아갈건지 물어보는 레이아웃 띄우기,버튼 비활성화
                 a = 1;
                 ask.setVisibility(View.VISIBLE);
@@ -296,14 +303,14 @@ public class game extends AppCompatActivity {
                 s = 0;
                 break;
             case R.id.re://다시시작
-                startActivity(re);
                 finish();
+                startActivity(re);
                 overridePendingTransition(R.anim.gone, R.anim.go);//액티비티 넘어갈때 애니매이션효과
                 break;
             case R.id.bye:
+                finish();
                 overridePendingTransition(R.anim.gone, R.anim.go);//메뉴로 가기
                 startActivity(I);
-                finish();
                 break;
             case R.id.button15://지우기 키를 눌렀을때 클릭이 비활성화 돼있는 것을 활성화시키는 작업
                 if (c == 1) {
@@ -364,13 +371,13 @@ public class game extends AppCompatActivity {
                     c--;
                 break;
             case R.id.out://메뉴로 가기
+                finish();
                 overridePendingTransition(R.anim.gone, R.anim.go);
                 startActivity(I);
-                finish();
                 break;
             case R.id.regame://게임 다시 시작
-               startActivity(re);
                 finish();
+               startActivity(re);
                 overridePendingTransition(R.anim.gone, R.anim.go);
                 break;
         }
