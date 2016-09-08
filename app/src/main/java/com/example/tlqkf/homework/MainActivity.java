@@ -10,7 +10,7 @@ import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity {
     int a = 0 ;
-    Button start,quit,yes,no;
+    Button start,quit,yes,no,ranking;
     RelativeLayout ask;
     @Override
     public void onBackPressed(){
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
+        ranking = (Button)findViewById(R.id.ranking);
         start = (Button)findViewById(R.id.button);
         quit = (Button)findViewById(R.id.button3);
         ask = (RelativeLayout)findViewById(R.id.ask);
@@ -54,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
                 quit.setVisibility(View.GONE);
                 yes.setClickable(true);
                 no.setClickable(true);
-
                 a = 1;
                 break;
             case R.id.finish:
@@ -68,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
                 yes.setClickable(false);
                 no.setClickable(false);
                 break;
+            case R.id.ranking:
+                Intent intent = new Intent(this,ranking.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.gone,R.anim.go);
         }
     }
 }

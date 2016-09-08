@@ -21,6 +21,12 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait" >
         </activity>
+        <activity android:name=".ranking"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+
     </application>
 
 </manifest>

@@ -24,31 +24,33 @@ public class game extends AppCompatActivity {
     Animation check;
     int a = 0, Random, Random2, Random3, b[] = new int[3], c = 0, g = 10, s1 = 0, s2 = 0, s3 = 0, s = 0, ball = 0, dw = 0;
     TextView n_f1, n_f2, n_f3, life, count, n_f1_, n_f3_, n_f4_, n_f2_, dab, dab_, dab__, R1, R2, R3, R4, R5, R6, R7, R8, R9;
-    Button n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8, n_9, menu, yes, no, ok, back, out, regame, re_, bye,good;
-    RelativeLayout ask, clear, die,record;
+    Button n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8, n_9, menu, yes, no, ok, back, out, regame, re_, bye, good;
+    RelativeLayout ask, clear, die, record;
     private Handler mHandler;
     EditText name;
     database db;
+
     @Override
     public void onBackPressed() {
         if (a == 1) {//a가 1일땐 뒤로가기를 눌러도 아무것도 일어나지 않음
         } else if (dw == 1) {//dw가 1일땐 뒤로가기를 눌러도 아무것도 일어나지 않음
-        } else if (a == 0){
+        } else if (a == 0) {
             ask.setVisibility(View.VISIBLE);//뒤로가기를 눌렀을때 메뉴로 돌아갈건지 물어보는 레이아웃 띄우기,버튼 비활성화
             yes.setClickable(true);
             no.setClickable(true);
             a = 1;
         }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.game);
-        re_ = (Button)findViewById(R.id.re);
-        bye = (Button)findViewById(R.id.bye);
-        die = (RelativeLayout)findViewById(R.id.die);
+        db = new database(this);
+        re_ = (Button) findViewById(R.id.re);
+        bye = (Button) findViewById(R.id.bye);
+        die = (RelativeLayout) findViewById(R.id.die);
         check = AnimationUtils.loadAnimation(this, R.anim.check);
         check.setAnimationListener(new Animation.AnimationListener() {//애니매이션 선언
             @Override
@@ -64,8 +66,8 @@ public class game extends AppCompatActivity {
             }
         });
         mHandler = new Handler();
-        record = (RelativeLayout)findViewById(R.id.record);
-        good = (Button)findViewById(R.id.good);
+        record = (RelativeLayout) findViewById(R.id.record);
+        good = (Button) findViewById(R.id.good);
         R1 = (TextView) findViewById(R.id.textView2);
         R2 = (TextView) findViewById(R.id.textView3);
         R3 = (TextView) findViewById(R.id.textView4);
@@ -123,8 +125,8 @@ public class game extends AppCompatActivity {
     }
 
     public void onclick(View v) {
-        Log.i("b[0],b[1],b[2]",""+b[0]+" "+b[1]+" "+b[2]);
-        Intent re = new Intent(this,game.class);
+        Log.i("b[0],b[1],b[2]", "" + b[0] + " " + b[1] + " " + b[2]);
+        Intent re = new Intent(this, game.class);
         Toast toast;
         toast = Toast.makeText(game.this, "숫자를 마저 입력해주세요", Toast.LENGTH_SHORT);
         Intent I = new Intent(this, MainActivity.class);
@@ -212,7 +214,6 @@ public class game extends AppCompatActivity {
                     if (b[2] == Random && s3 == 0 || b[2] == Random2 && s3 == 0) ball++;
                     s = s1 + s2 + s3;
                     Log.i("s1,s2,s3", "" + s1 + "," + s2 + "," + s3);
-
                     if (s == 3) {//게임 클리어시 클리어했다는 문구내보내기
                         dab.setText("" + Random);
                         dab_.setText("" + Random2);
@@ -287,9 +288,9 @@ public class game extends AppCompatActivity {
                         n_9.setClickable(true);
                         c = -1;
                         g--;
-                        if(g > 0)
-                        life.setText("목숨이 " + (g-1) + "번 남았습니다.");
-                        if (g == 0){//목숨이 없어졌을시 사망문구
+                        if (g > 0)
+                            life.setText("목숨이 " + (g - 1) + "번 남았습니다.");
+                        if (g == 0) {//목숨이 없어졌을시 사망문구
                             dw = 1;
                             die.setVisibility(View.VISIBLE);
                         }
@@ -307,21 +308,17 @@ public class game extends AppCompatActivity {
                 overridePendingTransition(R.anim.gone, R.anim.go);//액티비티 넘어갈때 애니매이션효과
                 break;
             case R.id.bye:
-                db.open();
-                record.setVisibility(View.VISIBLE);
+                finish();
+                overridePendingTransition(R.anim.gone, R.anim.go);
+                startActivity(I);
                 break;
             case R.id.good:
-                name = (EditText)findViewById(R.id.name);
+                name = (EditText) findViewById(R.id.name);
                 String inputname = name.getText().toString();
                 Cursor all_cursor = db.AllRows();
                 all_cursor.moveToFirst();
-                if(all_cursor.getCount() == 0){
-                    db.insert(10-g,inputname);
-                        Log.i("db값입력",""+(10-g)+inputname);
-                }else{
-                    Log.i("db값업데이트",""+(10-g)+inputname);
-                    db.update(""+all_cursor.getCount(),10-g,inputname);
-                }
+                db.insert(10 - g, inputname);
+                Log.i("db들어감", "" + (10 - g) + inputname);
                 finish();
                 overridePendingTransition(R.anim.gone, R.anim.go);//메뉴로 가기
                 startActivity(I);
@@ -369,28 +366,27 @@ public class game extends AppCompatActivity {
                     if (b[1] == 7) n_4.setClickable(false);
                     if (b[1] == 8) n_6.setClickable(false);
                     if (b[1] == 9) n_8.setClickable(false);
-                    if (b[0] == 1)n_1.setClickable(false);
-                    if (b[0] == 2)n_3.setClickable(false);
-                    if (b[0] == 3)n_5.setClickable(false);
-                    if (b[0] == 4)n_7.setClickable(false);
-                    if (b[0] == 5)n_9.setClickable(false);
-                    if (b[0] == 6)n_2.setClickable(false);
-                    if (b[0] == 7)n_4.setClickable(false);
-                    if (b[0] == 8)n_6.setClickable(false);
-                    if (b[0] == 9)n_8.setClickable(false);
+                    if (b[0] == 1) n_1.setClickable(false);
+                    if (b[0] == 2) n_3.setClickable(false);
+                    if (b[0] == 3) n_5.setClickable(false);
+                    if (b[0] == 4) n_7.setClickable(false);
+                    if (b[0] == 5) n_9.setClickable(false);
+                    if (b[0] == 6) n_2.setClickable(false);
+                    if (b[0] == 7) n_4.setClickable(false);
+                    if (b[0] == 8) n_6.setClickable(false);
+                    if (b[0] == 9) n_8.setClickable(false);
                     b[2] = 0;
                     c = c - 2;
                 } else
                     c--;
                 break;
             case R.id.out://메뉴로 가기
-                finish();
-                overridePendingTransition(R.anim.gone, R.anim.go);
-                startActivity(I);
+                db.open();
+                record.setVisibility(View.VISIBLE);
                 break;
             case R.id.regame://게임 다시 시작
                 finish();
-               startActivity(re);
+                startActivity(re);
                 overridePendingTransition(R.anim.gone, R.anim.go);
                 break;
         }

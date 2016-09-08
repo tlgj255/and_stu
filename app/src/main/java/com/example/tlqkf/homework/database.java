@@ -13,14 +13,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class database {
     private static final String DATABASE_NAME = "first_DB";
     private static final String DATABASE_TABLE = "first_table";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private final Context mCtx;
 
     private DatabaseHelper mDbHelper;
     private SQLiteDatabase mDb;
 
     private static final String DATABASE_CREATE="CREATE TABLE " +DATABASE_TABLE+ "" +
-            " (    ID    INTEGER PRIMARY    KEY AUTOINCREMENT, POINT INTEGER,     NAME TEXT)";
+            " (    ID    INTEGER PRIMARY    KEY AUTOINCREMENT,     POINT INTEGER,     NAME TEXT)";
 
 
     public static class DatabaseHelper extends SQLiteOpenHelper {

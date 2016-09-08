@@ -531,8 +531,9 @@
                 android:id="@+id/good"
                 android:layout_below="@+id/name"
                 android:layout_alignParentStart="true"
-                android:textSize="60dp"/>
-                android:textStyle="bold"/>
+                android:textSize="60dp"
+                android:textStyle="bold"
+            android:onClick="onclick"/>
         </RelativeLayout>
     </RelativeLayout>
 </FrameLayout>
