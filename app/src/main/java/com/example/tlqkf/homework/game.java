@@ -1,6 +1,7 @@
 package com.example.tlqkf.homework;
 
 import android.content.pm.ActivityInfo;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -19,15 +20,14 @@ import android.content.Intent;
 import android.widget.Toast;
 
 
-public class
-game extends AppCompatActivity {
+public class game extends AppCompatActivity {
     Animation check;
     int a = 0, Random, Random2, Random3, b[] = new int[3], c = 0, g = 10, s1 = 0, s2 = 0, s3 = 0, s = 0, ball = 0, dw = 0;
     TextView n_f1, n_f2, n_f3, life, count, n_f1_, n_f3_, n_f4_, n_f2_, dab, dab_, dab__, R1, R2, R3, R4, R5, R6, R7, R8, R9;
     Button n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8, n_9, menu, yes, no, ok, back, out, regame, re_, bye,good;
-    EditText name;
     RelativeLayout ask, clear, die,record;
     private Handler mHandler;
+    EditText name;
     database db;
     @Override
     public void onBackPressed() {
@@ -66,7 +66,6 @@ game extends AppCompatActivity {
         mHandler = new Handler();
         record = (RelativeLayout)findViewById(R.id.record);
         good = (Button)findViewById(R.id.good);
-        name = (EditText)findViewById(R.id.name);
         R1 = (TextView) findViewById(R.id.textView2);
         R2 = (TextView) findViewById(R.id.textView3);
         R3 = (TextView) findViewById(R.id.textView4);
@@ -308,10 +307,24 @@ game extends AppCompatActivity {
                 overridePendingTransition(R.anim.gone, R.anim.go);//액티비티 넘어갈때 애니매이션효과
                 break;
             case R.id.bye:
+                db.open();
+                record.setVisibility(View.VISIBLE);
+                break;
+            case R.id.good:
+                name = (EditText)findViewById(R.id.name);
+                String inputname = name.getText().toString();
+                Cursor all_cursor = db.AllRows();
+                all_cursor.moveToFirst();
+                if(all_cursor.getCount() == 0){
+                    db.insert(10-g,inputname);
+                        Log.i("db값입력",""+(10-g)+inputname);
+                }else{
+                    Log.i("db값업데이트",""+(10-g)+inputname);
+                    db.update(""+all_cursor.getCount(),10-g,inputname);
+                }
                 finish();
                 overridePendingTransition(R.anim.gone, R.anim.go);//메뉴로 가기
                 startActivity(I);
-                break;
             case R.id.button15://지우기 키를 눌렀을때 클릭이 비활성화 돼있는 것을 활성화시키는 작업
                 if (c == 1) {
                     n_1.setClickable(true);
