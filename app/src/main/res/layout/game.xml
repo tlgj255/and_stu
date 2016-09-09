@@ -512,8 +512,8 @@
                 android:layout_width="300dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
-                android:text="   이름입력"
-                android:textSize="50dp"
+                android:text="   이름입력(6자이하)"
+                android:textSize="30dp"
                 android:textStyle="bold"
                 android:id="@+id/textView11" />
 
@@ -521,6 +521,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:id="@+id/name"
+                android:maxLength="6"
+                android:gravity="center"
+                android:textStyle="bold"
                 android:layout_centerVertical="true"
                 android:layout_alignParentStart="true" />
 

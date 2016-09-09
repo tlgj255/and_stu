@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.content.pm.ActivityInfoCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -314,6 +315,8 @@ public class game extends AppCompatActivity {
                 break;
             case R.id.good:
                 name = (EditText) findViewById(R.id.name);
+                name.setFilters(new InputFilter[]{new InputFilter.LengthFilter(6)});
+                name.setGravity(Gravity.CENTER);
                 String inputname = name.getText().toString();
                 Cursor all_cursor = db.AllRows();
                 all_cursor.moveToFirst();
