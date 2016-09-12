@@ -370,8 +370,6 @@
         android:onClick="onclick"
         android:visibility="gone"
         android:id="@+id/clear">
-
-
         <RelativeLayout
 
             android:layout_width="300dp"
@@ -416,6 +414,7 @@
                 android:onClick="onclick"
                 android:text="다시도전!!" />
         </RelativeLayout>
+
     </RelativeLayout>
 
     <RelativeLayout

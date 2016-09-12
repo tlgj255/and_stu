@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.content.pm.ActivityInfoCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
 import android.util.Log;
@@ -13,17 +12,19 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Toast;
+import android.content.Context;
 
 
 public class game extends AppCompatActivity {
     Animation check;
-    int a = 0, Random, Random2, Random3, b[] = new int[3], c = 0, g = 10, s1 = 0, s2 = 0, s3 = 0, s = 0, ball = 0, dw = 0;
+    int a = 0, Random, Random2, Random3, b[] = new int[3], c = 0, g = 10, s1 = 0, s2 = 0, s3 = 0, s = 0, ball = 0, dw = 0,ds;
     TextView n_f1, n_f2, n_f3, life, count, n_f1_, n_f3_, n_f4_, n_f2_, dab, dab_, dab__, R1, R2, R3, R4, R5, R6, R7, R8, R9;
     Button n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8, n_9, menu, yes, no, ok, back, out, regame, re_, bye, good;
     RelativeLayout ask, clear, die, record;
@@ -123,8 +124,8 @@ public class game extends AppCompatActivity {
         Log.i("Random", "" + Random);
         Log.i("Random2", "" + Random2);
         Log.i("Random3", "" + Random3);
-    }
 
+    }
     public void onclick(View v) {
         Log.i("b[0],b[1],b[2]", "" + b[0] + " " + b[1] + " " + b[2]);
         Intent re = new Intent(this, game.class);
@@ -132,7 +133,9 @@ public class game extends AppCompatActivity {
         toast = Toast.makeText(game.this, "숫자를 마저 입력해주세요", Toast.LENGTH_SHORT);
         Intent I = new Intent(this, MainActivity.class);
         switch (v.getId()) {
-
+            case R.id.ask:
+                c--;
+                break;
             case R.id.button13://버튼를 눌렀을때 메뉴로 돌아갈건지 물어보는 레이아웃 띄우기,버튼 비활성화
                 a = 1;
                 ask.setVisibility(View.VISIBLE);
@@ -147,15 +150,6 @@ public class game extends AppCompatActivity {
                 break;
             case R.id.no://원상태로 복귀
                 a = 0;
-                n_1.setClickable(true);
-                n_2.setClickable(true);
-                n_3.setClickable(true);
-                n_4.setClickable(true);
-                n_5.setClickable(true);
-                n_6.setClickable(true);
-                n_7.setClickable(true);
-                n_8.setClickable(true);
-                n_9.setClickable(true);
                 menu.setClickable(true);
                 ask.setVisibility(View.GONE);
                 yes.setClickable(false);
@@ -163,7 +157,7 @@ public class game extends AppCompatActivity {
                 if (b[0] > 0) c = 0;
                 if (b[1] > 0) c = 1;
                 if (b[2] > 0) c = 2;
-                else c = -1;
+                if(b[0] == 0) c = -1;
                 break;
             case R.id.button6:
                 b[c] = 1;
