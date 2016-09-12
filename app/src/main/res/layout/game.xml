@@ -1,375 +1,386 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/note">
-   <RelativeLayout
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content">
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp"
-        android:background="#60000000"
-        android:onClick="onclick"
-        android:text="6" />
+    android:background="@drawable/note"
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/button4"
-        android:background="#60000000"
-        android:onClick="onclick"
-        android:text="7" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button4"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp"
-        android:background="#60000000"
-        android:onClick="onclick"
-        android:text="1" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button6"
-        android:layout_toEndOf="@+id/button4"
-        android:background="#60000000"
-        android:onClick="onclick"
-        android:text="2"
-        android:visibility="visible" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button7"
-        android:layout_toEndOf="@+id/button5"
-        android:background="#60000000"
-        android:onClick="onclick"
-        android:text="3" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/button8"
-        android:layout_below="@+id/button8"
-        android:background="#60000000"
-        android:onClick="onclick"
-        android:text="8" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button8"
-        android:layout_toEndOf="@+id/button8"
-        android:background="#60000000"
-        android:onClick="onclick"
-        android:text="4" />
-
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button8"
-        android:layout_toEndOf="@+id/button8"
-        android:background="#60000000"
-        android:onClick="onclick"
-        android:text="9" />
-
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button11"
-        android:layout_marginRight="10dp"
-        android:layout_toEndOf="@+id/button10"
-        android:background="#60000000"
-        android:onClick="onclick"
-        android:text="5" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button12"
-        android:layout_marginRight="10dp"
-        android:layout_toEndOf="@+id/button11"
-        android:background="#60000000"
-        android:onClick="onclick"
-        android:text="menu" />
-
-    <TextView
-        android:id="@+id/life"
-        android:layout_width="310dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:background="#66000000"
-        android:text=" 목숨이 9번 남았습니다."
-        android:textColor="#FFFF37"
-        android:textSize="30dp" />
-
-    <TextView
-        android:id="@+id/f_n1"
-        android:layout_width="30dp"
-        android:layout_height="57dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="410dp"
-        android:background="#66000000"
-        android:text="0"
-        android:textColor="#FFFF37"
-        android:textSize="50dp"
-        android:visibility="visible" />
-
-    <TextView
-        android:id="@+id/f_n2"
-        android:layout_width="30dp"
-        android:layout_height="57dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="410dp"
-        android:background="#66000000"
-        android:text="0"
-        android:textColor="#FFFF37"
-        android:textSize="50dp"
-        android:visibility="visible" />
-
-    <TextView
-        android:id="@+id/f_n1_"
-        android:layout_width="30dp"
-        android:layout_height="57dp"
-        android:layout_alignEnd="@+id/button7"
-        android:background="#66000000"
-        android:text="S"
-        android:textColor="#FFFF37"
-        android:textSize="50dp"
-        android:visibility="gone"
-        android:layout_centerVertical="true"/>
-
-    <TextView
-        android:id="@+id/f_n4_"
-        android:layout_width="30dp"
-        android:layout_height="57dp"
-        android:layout_alignStart="@+id/life"
-        android:background="#66000000"
-        android:text="0"
-        android:textColor="#FFFF37"
-        android:textSize="50dp"
-        android:visibility="gone"
-        android:layout_centerVertical="true"
-        />
-
-    <TextView
-        android:id="@+id/f_n2_"
-        android:layout_width="30dp"
-        android:layout_height="57dp"
-        android:layout_alignTop="@+id/f_n3_"
-        android:layout_toEndOf="@+id/button8"
-        android:background="#66000000"
-        android:text="0"
-        android:textColor="#FFFF37"
-        android:textSize="50dp"
-        android:visibility="gone"
-        android:layout_centerVertical="true"/>
-
-
-    <TextView
-        android:id="@+id/f_n3_"
-        android:layout_width="30dp"
-        android:layout_height="57dp"
-        android:layout_alignEnd="@+id/life"
-        android:background="#66000000"
-        android:text="B"
-        android:textColor="#FFFF37"
-        android:textSize="50dp"
-        android:visibility="gone"
-        android:layout_centerVertical="true"/>
-
-
-    <TextView
-        android:id="@+id/f_n3"
-        android:layout_width="30dp"
-        android:layout_height="57dp"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="410dp"
-        android:background="#66000000"
-        android:text="0"
-        android:textColor="#FFFF37"
-        android:textSize="50dp"
-        android:visibility="visible" />
-
-    <TextView
-        android:id="@+id/f_n1__"
-        android:layout_width="30dp"
-        android:layout_height="54dp"
-        android:layout_marginLeft="70dp"
-        android:background="#66000000"
-        android:text="0"
-        android:textColor="#FFFF37"
-        android:textSize="50dp"
-        android:visibility="visible"
-        android:layout_marginTop="60dp"/>
-
-    <TextView
-        android:id="@+id/f_n2__"
-        android:layout_width="30dp"
-        android:layout_height="54dp"
-        android:layout_marginLeft="170dp"
-        android:background="#66000000"
-        android:text="0"
-        android:textColor="#FFFF37"
-        android:textSize="50dp"
-        android:visibility="visible"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"/>
-
-    <TextView
-        android:id="@+id/f_n3__"
-        android:layout_width="30dp"
-        android:layout_height="54dp"
-        android:layout_marginLeft="280dp"
-        android:background="#66000000"
-        android:text="0"
-        android:textColor="#FFFF37"
-        android:textSize="50dp"
-        android:visibility="visible"
-        android:layout_marginTop="60dp"
-        />
-
-    <Button
-        android:id="@+id/button14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button6"
-        android:layout_marginLeft="30dp"
-        android:background="#60000000"
-        android:onClick="onclick"
-        android:text="확인" />
-
-    <Button
-        android:id="@+id/button15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="30dp"
-        android:background="#60000000"
-        android:onClick="onclick"
-        android:text="지우기"
-        android:layout_alignBaseline="@+id/button14"
-        android:layout_alignBottom="@+id/button14"
-        android:layout_alignEnd="@+id/button12" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="1R 2S 1B"
-        android:id="@+id/textView2"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="150dp"
-        android:visibility="gone"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="1R 2S 1B"
-        android:id="@+id/textView3"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="195dp"
-        android:visibility="gone"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="1R 2S 1B"
-        android:id="@+id/textView4"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="240dp"
-        android:visibility="gone"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="1R 2S 1B"
-        android:id="@+id/textView5"
-        android:layout_marginTop="150dp"
-        android:layout_centerHorizontal="true"
-        android:visibility="gone"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="1R 2S 1B"
-        android:id="@+id/textView6"
-        android:layout_marginTop="195dp"
-        android:layout_centerHorizontal="true"
-        android:visibility="gone"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="1R 2S 1B"
-        android:id="@+id/textView7"
-        android:layout_marginTop="240dp"
-        android:layout_centerHorizontal="true"
-        android:visibility="gone"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="1R 2S 1B"
-        android:visibility="gone"
-        android:id="@+id/textView8"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="250dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="1R 2S 1B"
-        android:visibility="gone"
-        android:id="@+id/textView9"
-        android:layout_marginTop="195dp"
-        android:layout_marginLeft="250dp"  />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="1R 2S 1B"
-        android:visibility="gone"
-        android:id="@+id/textView10"
-        android:layout_marginTop="240dp"
-        android:layout_marginLeft="250dp" />
-
-
-   </RelativeLayout>
     <RelativeLayout
-        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:background="#60000000"
+            android:onClick="onclick"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/button4"
+            android:background="#60000000"
+            android:onClick="onclick"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button4"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:background="#60000000"
+            android:onClick="onclick"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/button6"
+            android:layout_toEndOf="@+id/button4"
+            android:background="#60000000"
+            android:onClick="onclick"
+            android:text="2"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/button7"
+            android:layout_toEndOf="@+id/button5"
+            android:background="#60000000"
+            android:onClick="onclick"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/button8"
+            android:layout_below="@+id/button8"
+            android:background="#60000000"
+            android:onClick="onclick"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/button8"
+            android:layout_toEndOf="@+id/button8"
+            android:background="#60000000"
+            android:onClick="onclick"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button8"
+            android:layout_toEndOf="@+id/button8"
+            android:background="#60000000"
+            android:onClick="onclick"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button11"
+            android:layout_marginRight="10dp"
+            android:layout_toEndOf="@+id/button10"
+            android:background="#60000000"
+            android:onClick="onclick"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button12"
+            android:layout_marginRight="10dp"
+            android:layout_toEndOf="@+id/button11"
+            android:background="#60000000"
+            android:onClick="onclick"
+            android:text="menu" />
+
+        <TextView
+            android:id="@+id/life"
+            android:layout_width="310dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:background="#66000000"
+            android:text=" 목숨이 9번 남았습니다."
+            android:textColor="#FFFF37"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/f_n1"
+            android:layout_width="30dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="410dp"
+            android:background="#66000000"
+            android:text="0"
+            android:textColor="#FFFF37"
+            android:textSize="50dp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/f_n2"
+            android:layout_width="30dp"
+            android:layout_height="57dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="410dp"
+            android:background="#66000000"
+            android:text="0"
+            android:textColor="#FFFF37"
+            android:textSize="50dp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/f_n1_"
+            android:layout_width="30dp"
+            android:layout_height="57dp"
+            android:layout_alignEnd="@+id/button7"
+            android:layout_centerVertical="true"
+            android:background="#66000000"
+            android:text="S"
+            android:textColor="#FFFF37"
+            android:textSize="50dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/f_n4_"
+            android:layout_width="30dp"
+            android:layout_height="57dp"
+            android:layout_alignStart="@+id/life"
+            android:layout_centerVertical="true"
+            android:background="#66000000"
+            android:text="0"
+            android:textColor="#FFFF37"
+            android:textSize="50dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/f_n2_"
+            android:layout_width="30dp"
+            android:layout_height="57dp"
+            android:layout_alignTop="@+id/f_n3_"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/button8"
+            android:background="#66000000"
+            android:text="0"
+            android:textColor="#FFFF37"
+            android:textSize="50dp"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/f_n3_"
+            android:layout_width="30dp"
+            android:layout_height="57dp"
+            android:layout_alignEnd="@+id/life"
+            android:layout_centerVertical="true"
+            android:background="#66000000"
+            android:text="B"
+            android:textColor="#FFFF37"
+            android:textSize="50dp"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/f_n3"
+            android:layout_width="30dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="410dp"
+            android:background="#66000000"
+            android:text="0"
+            android:textColor="#FFFF37"
+            android:textSize="50dp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/f_n1__"
+            android:layout_width="30dp"
+            android:layout_height="54dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="60dp"
+            android:background="#66000000"
+            android:text="0"
+            android:textColor="#FFFF37"
+            android:textSize="50dp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/f_n2__"
+            android:layout_width="30dp"
+            android:layout_height="54dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="60dp"
+            android:background="#66000000"
+            android:text="0"
+            android:textColor="#FFFF37"
+            android:textSize="50dp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/f_n3__"
+            android:layout_width="30dp"
+            android:layout_height="54dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="60dp"
+            android:background="#66000000"
+            android:text="0"
+            android:textColor="#FFFF37"
+            android:textSize="50dp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button6"
+            android:layout_marginLeft="30dp"
+            android:background="#60000000"
+            android:onClick="onclick"
+            android:text="확인" />
+
+        <Button
+            android:id="@+id/button15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button14"
+            android:layout_alignBottom="@+id/button14"
+            android:layout_alignEnd="@+id/button12"
+            android:layout_marginRight="30dp"
+            android:background="#60000000"
+            android:onClick="onclick"
+            android:text="지우기" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="150dp"
+            android:text="1R 2S 1B"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="195dp"
+            android:text="1R 2S 1B"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="240dp"
+            android:text="1R 2S 1B"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:text="1R 2S 1B"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="195dp"
+            android:text="1R 2S 1B"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="240dp"
+            android:text="1R 2S 1B"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="150dp"
+            android:text="1R 2S 1B"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="195dp"
+            android:text="1R 2S 1B"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="240dp"
+            android:text="1R 2S 1B"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#AA000000"
-        android:visibility="gone">
+        android:onClick="onclick"
+        android:visibility="gone"
+        android:id="@+id/clear">
+
 
         <RelativeLayout
+
             android:layout_width="300dp"
             android:layout_height="170dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="146dp"
-            android:background="#FFFFFF">
+            android:background="#FFFFFF"
+          >
 
             <TextView
                 android:layout_width="300dp"
@@ -406,13 +417,14 @@
                 android:text="다시도전!!" />
         </RelativeLayout>
     </RelativeLayout>
+
     <RelativeLayout
-        android:id="@+id/ask"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#AA000000"
         android:onClick="onclick"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:id="@+id/ask">
 
         <RelativeLayout
             android:layout_width="300dp"
@@ -437,7 +449,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@+id/finish"
                 android:onClick="onclick"
-                android:text="다시진행" />
+                android:text="다시시작" />
 
             <Button
                 android:id="@+id/finish"
@@ -449,15 +461,17 @@
                 android:text="메뉴로" />
         </RelativeLayout>
     </RelativeLayout>
+
     <RelativeLayout
-        android:id="@+id/die"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#AA000000"
         android:onClick="onclick"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:id="@+id/die">
 
         <RelativeLayout
+
             android:layout_width="300dp"
             android:layout_height="170dp"
             android:layout_alignParentTop="true"
@@ -492,6 +506,7 @@
                 android:text="메뉴로" />
         </RelativeLayout>
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/record"
         android:layout_width="match_parent"
@@ -501,42 +516,45 @@
         android:visibility="gone">
 
         <RelativeLayout
+
             android:layout_width="300dp"
             android:layout_height="250dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="118dp"
-            android:background="#FFFFFF">
+            android:background="#FFFFFF"
+
+            >
 
             <TextView
+                android:id="@+id/textView11"
                 android:layout_width="300dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
                 android:text="   이름입력(6자이하)"
                 android:textSize="30dp"
-                android:textStyle="bold"
-                android:id="@+id/textView11" />
+                android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/name"
-                android:maxLength="6"
-                android:gravity="center"
-                android:textStyle="bold"
+                android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:layout_alignParentStart="true" />
+                android:gravity="center"
+                android:maxLength="6"
+                android:textStyle="bold" />
 
             <Button
+                android:id="@+id/good"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="확인"
-                android:id="@+id/good"
-                android:layout_below="@+id/name"
                 android:layout_alignParentStart="true"
+                android:layout_below="@+id/name"
+                android:onClick="onclick"
+                android:text="확인"
                 android:textSize="60dp"
-                android:textStyle="bold"
-            android:onClick="onclick"/>
+                android:textStyle="bold" />
         </RelativeLayout>
     </RelativeLayout>
 </FrameLayout>

@@ -220,7 +220,7 @@ public class game extends AppCompatActivity {
                         dab_.setText("" + Random2);
                         dab__.setText("" + Random3);
                         clear.setVisibility(View.VISIBLE);
-                        count.setText(10 - g + "번만에 클리어!!");
+                        count.setText(11 - g + "번만에 클리어!!");
                         dw++;
                     } else {//클리어 못했을 시
                         n_f4_.setVisibility(View.VISIBLE);//애니매이션 나타내기
@@ -292,6 +292,9 @@ public class game extends AppCompatActivity {
                         if (g > 0)
                             life.setText("목숨이 " + (g - 1) + "번 남았습니다.");
                         if (g == 0) {//목숨이 없어졌을시 사망문구
+                            dab.setText("" + Random);
+                            dab_.setText("" + Random2);
+                            dab__.setText("" + Random3);
                             dw = 1;
                             die.setVisibility(View.VISIBLE);
                         }
