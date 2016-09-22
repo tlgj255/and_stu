@@ -24,7 +24,7 @@ import android.content.Context;
 
 public class game extends AppCompatActivity {
     Animation check;
-    int a = 0, Random, Random2, Random3, b[] = new int[3], c = 0, g = 10, s1 = 0, s2 = 0, s3 = 0, s = 0, ball = 0, dw = 0,ds;
+    int a = 0, Random, Random2, Random3, b[] = new int[10], c = 0, g = 10, s1 = 0, s2 = 0, s3 = 0, s = 0, ball = 0, dw = 0;
     TextView n_f1, n_f2, n_f3, life, count, n_f1_, n_f3_, n_f4_, n_f2_, dab, dab_, dab__, R1, R2, R3, R4, R5, R6, R7, R8, R9;
     Button n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8, n_9, menu, yes, no, ok, back, out, regame, re_, bye, good;
     RelativeLayout ask, clear, die, record;
@@ -34,7 +34,16 @@ public class game extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (a == 1) {//a가 1일땐 뒤로가기를 눌러도 아무것도 일어나지 않음
+        if (a == 1) {
+            a = 0;
+            menu.setClickable(true);
+            ask.setVisibility(View.GONE);
+            yes.setClickable(false);
+            no.setClickable(false);
+            if (b[0] > 0) c = 0;
+            if (b[1] > 0) c = 1;
+            if (b[2] > 0) c = 2;
+            if(b[0] == 0) c = -1;
         } else if (dw == 1) {//dw가 1일땐 뒤로가기를 눌러도 아무것도 일어나지 않음
         } else if (a == 0) {
             ask.setVisibility(View.VISIBLE);//뒤로가기를 눌렀을때 메뉴로 돌아갈건지 물어보는 레이아웃 띄우기,버튼 비활성화
@@ -141,6 +150,7 @@ public class game extends AppCompatActivity {
                 ask.setVisibility(View.VISIBLE);
                 yes.setClickable(true);
                 no.setClickable(true);
+                c--;
                 break;
             case R.id.finish:
                 c = 0;
@@ -196,7 +206,7 @@ public class game extends AppCompatActivity {
                 n_9.setClickable(false);
                 break;
             case R.id.button14:
-                if (c == 3) {
+                if (c >= 3) {
                     s1 = 0;
                     s2 = 0;
                     s3 = 0;
@@ -312,16 +322,20 @@ public class game extends AppCompatActivity {
                 break;
             case R.id.good:
                 name = (EditText) findViewById(R.id.name);
-                name.setFilters(new InputFilter[]{new InputFilter.LengthFilter(6)});
-                name.setGravity(Gravity.CENTER);
                 String inputname = name.getText().toString();
-                Cursor all_cursor = db.AllRows();
-                all_cursor.moveToFirst();
-                db.insert(10 - g, inputname);
-                Log.i("db들어감", "" + (10 - g) + inputname);
-                finish();
-                overridePendingTransition(R.anim.gone, R.anim.go);//메뉴로 가기
-                startActivity(I);
+                if(inputname.getBytes().length <= 0)
+                    Toast.makeText(this, "이름을 마저 입력해 주세요", Toast.LENGTH_SHORT).show();
+                else {
+                    name.setFilters(new InputFilter[]{new InputFilter.LengthFilter(6)});
+                    name.setGravity(Gravity.CENTER);
+                    Cursor all_cursor = db.AllRows();
+                    all_cursor.moveToFirst();
+                    db.insert(10 - g, inputname);
+                    Log.i("db들어감", "" + (10 - g) + inputname);
+                    finish();
+                    overridePendingTransition(R.anim.gone, R.anim.go);//메뉴로 가기
+                    startActivity(I);
+                }
             case R.id.button15://지우기 키를 눌렀을때 클릭이 비활성화 돼있는 것을 활성화시키는 작업
                 if (c == 1) {
                     n_1.setClickable(true);
@@ -394,7 +408,10 @@ public class game extends AppCompatActivity {
         n_f2.setText("" + b[1]);
         n_f3.setText("" + b[2]);
         Log.i("c", "" + c);
+        if(c  <  4)
         c++;
+        else
+        c = 3;
         if (c == 3) {//숫자를 3번 입력시 클릭 비활성화
             n_1.setClickable(false);
             n_2.setClickable(false);
