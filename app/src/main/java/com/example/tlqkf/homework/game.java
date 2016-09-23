@@ -2,6 +2,8 @@ package com.example.tlqkf.homework;
 
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -31,6 +33,7 @@ public class game extends AppCompatActivity {
     private Handler mHandler;
     EditText name;
     database db;
+    SoundPool ppyok,pyororo;
 
     @Override
     public void onBackPressed() {
@@ -40,10 +43,6 @@ public class game extends AppCompatActivity {
             ask.setVisibility(View.GONE);
             yes.setClickable(false);
             no.setClickable(false);
-            if (b[0] > 0) c = 0;
-            if (b[1] > 0) c = 1;
-            if (b[2] > 0) c = 2;
-            if(b[0] == 0) c = -1;
         } else if (dw == 1) {//dw가 1일땐 뒤로가기를 눌러도 아무것도 일어나지 않음
         } else if (a == 0) {
             ask.setVisibility(View.VISIBLE);//뒤로가기를 눌렀을때 메뉴로 돌아갈건지 물어보는 레이아웃 띄우기,버튼 비활성화
@@ -55,6 +54,8 @@ public class game extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        pyororo = new SoundPool(1,AudioManager.STREAM_ALARM,0);
+        ppyok = new SoundPool(1, AudioManager.STREAM_ALARM,0);
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.game);
@@ -136,6 +137,9 @@ public class game extends AppCompatActivity {
 
     }
     public void onclick(View v) {
+        final int pyororo_ = pyororo.load(this,R.raw.a0081,1);
+        final int ppyok_ = ppyok.load(this,R.raw.a007,1);
+        int ppyok__ = ppyok.play(ppyok_, 1.0F, 1.0F,  1,  0, 1.0F);
         Log.i("b[0],b[1],b[2]", "" + b[0] + " " + b[1] + " " + b[2]);
         Intent re = new Intent(this, game.class);
         Toast toast;
@@ -227,6 +231,7 @@ public class game extends AppCompatActivity {
                         count.setText(11 - g + "번만에 클리어!!");
                         dw++;
                     } else {//클리어 못했을 시
+                        int pyororo__ = pyororo.play(pyororo_, 1.0F, 1.0F,  1,  0, 1.0F);
                         n_f4_.setVisibility(View.VISIBLE);//애니매이션 나타내기
                         n_f4_.startAnimation(check);//애니매이션 나타내기
                         n_f3_.setVisibility(View.VISIBLE);//애니매이션 나타내기

@@ -447,7 +447,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@+id/finish"
                 android:onClick="onclick"
-                android:text="다시시작" />
+                android:text="계속하기" />
 
             <Button
                 android:id="@+id/finish"
