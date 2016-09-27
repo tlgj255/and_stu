@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    int a = 0, temp = 0;
+    int a = 0;
     Button start, quit, yes, no, ranking;
     RelativeLayout ask;
     TextView rank;
@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         rank.setText("최근기록 \n점수 : "+(10-all_cursor.getInt(all_cursor.getColumnIndex("POINT")))+"점 닉네임 : "
                 +all_cursor.getString(all_cursor.getColumnIndex("NAME")));
     }
-
     public void onclick(View v) {
         Intent game = new Intent(this, game.class);
         switch (v.getId()) {

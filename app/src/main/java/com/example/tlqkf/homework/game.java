@@ -3,6 +3,7 @@ package com.example.tlqkf.homework;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,15 +15,12 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Toast;
-import android.content.Context;
-
 
 public class game extends AppCompatActivity {
     Animation check;
@@ -33,8 +31,7 @@ public class game extends AppCompatActivity {
     private Handler mHandler;
     EditText name;
     database db;
-    SoundPool ppyok,pyororo;
-
+     MediaPlayer ppyok,pyororo,forgive;
     @Override
     public void onBackPressed() {
         if (a == 1) {
@@ -54,8 +51,9 @@ public class game extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        pyororo = new SoundPool(1,AudioManager.STREAM_ALARM,0);
-        ppyok = new SoundPool(1, AudioManager.STREAM_ALARM,0);
+        ppyok = MediaPlayer.create(this,R.raw.a007);
+        pyororo = MediaPlayer.create(this,R.raw.a0081);
+        forgive  = MediaPlayer.create(this,R.raw.forgive);
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.game);
@@ -137,18 +135,13 @@ public class game extends AppCompatActivity {
 
     }
     public void onclick(View v) {
-        final int pyororo_ = pyororo.load(this,R.raw.a0081,1);
-        final int ppyok_ = ppyok.load(this,R.raw.a007,1);
-        int ppyok__ = ppyok.play(ppyok_, 1.0F, 1.0F,  1,  0, 1.0F);
+        ppyok.start();
         Log.i("b[0],b[1],b[2]", "" + b[0] + " " + b[1] + " " + b[2]);
         Intent re = new Intent(this, game.class);
         Toast toast;
         toast = Toast.makeText(game.this, "숫자를 마저 입력해주세요", Toast.LENGTH_SHORT);
         Intent I = new Intent(this, MainActivity.class);
         switch (v.getId()) {
-            case R.id.ask:
-                c--;
-                break;
             case R.id.button13://버튼를 눌렀을때 메뉴로 돌아갈건지 물어보는 레이아웃 띄우기,버튼 비활성화
                 a = 1;
                 ask.setVisibility(View.VISIBLE);
@@ -231,7 +224,7 @@ public class game extends AppCompatActivity {
                         count.setText(11 - g + "번만에 클리어!!");
                         dw++;
                     } else {//클리어 못했을 시
-                        int pyororo__ = pyororo.play(pyororo_, 1.0F, 1.0F,  1,  0, 1.0F);
+                        pyororo.start();
                         n_f4_.setVisibility(View.VISIBLE);//애니매이션 나타내기
                         n_f4_.startAnimation(check);//애니매이션 나타내기
                         n_f3_.setVisibility(View.VISIBLE);//애니매이션 나타내기
@@ -301,6 +294,7 @@ public class game extends AppCompatActivity {
                         if (g > 0)
                             life.setText("목숨이 " + (g - 1) + "번 남았습니다.");
                         if (g == 0) {//목숨이 없어졌을시 사망문구
+                            forgive.start();
                             dab.setText("" + Random);
                             dab_.setText("" + Random2);
                             dab__.setText("" + Random3);
